@@ -1,5 +1,5 @@
 import GDGTeam from '../components/GDGTeam';
-export default function ContactUs() {
+export default function TeamPage() {
   return (
       <main>
         <GDGTeam />

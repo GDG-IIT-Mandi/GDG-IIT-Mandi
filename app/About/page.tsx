@@ -1,9 +1,7 @@
-import GDGTeam from '../components/GDGTeam';
-
-export default function ContactUs() {
+export default function AboutUs() {
   return (
       <main>
-        <GDGTeam />
+        <p>Yellow</p>
       </main>
   );
 }
