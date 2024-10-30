@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 10px;
+}
+
+.logo {
+  margin-right: 20px;
+}
+
+.linkContainer {
+  display: flex;
+  margin-left: auto;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 20px; 
+  transition: background-color 0.3s;
+}
+
+.link:hover {
+  opacity: 0.8;
+}
