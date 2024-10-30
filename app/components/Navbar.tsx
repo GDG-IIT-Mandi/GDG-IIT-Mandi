@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
     { name: 'Highlights', color: '#4285F4', linkto:'Highlights' },   // Blue
     { name: 'Team GDG', color: '#EA4335', linkto:'TeamGDG'},  // Red
     { name: 'About', color: '#FBBC05', linkto:'About'},  // Yellow
-    { name: 'GDG', color: '#34A853', linkto:'https://developers.google.com/community/gdg'}, // Green
+    { name: 'GDG', color: '#34A853', linkto:'#'}, // Green
   ];
 
   return (
