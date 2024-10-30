@@ -5,7 +5,7 @@ import { collection, getDocs, updateDoc, doc, addDoc, deleteDoc } from "firebase
 import { ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage"; 
 import { onAuthStateChanged } from "firebase/auth";
 import { signInWithGoogle, logout } from "./authservice";
-import styles from "./SAETeam.module.css";
+import styles from "./GDGTeam.module.css";
 import ProfileCard from "./ProfileCard";
 
 interface Member {
@@ -16,7 +16,7 @@ interface Member {
   Instagram: string;
 }
 
-const SAETeam: React.FC = () => {
+const GDGTeam: React.FC = () => {
   const [items, setItems] = useState<Member[]>([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [editing, setEditing] = useState<string | null>(null);
@@ -268,4 +268,4 @@ const SAETeam: React.FC = () => {
   );
 };
 
-export default SAETeam;
+export default GDGTeam;
