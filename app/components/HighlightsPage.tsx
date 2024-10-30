@@ -5,7 +5,7 @@ import { collection, getDocs, updateDoc, doc, addDoc, deleteDoc } from "firebase
 import { ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage";
 import { onAuthStateChanged } from "firebase/auth";
 import { signInWithGoogle, logout } from "./authservice";
-import styles from "./Highlights.module.css";
+import styles from "./HighlightsPage.module.css";
 
 interface NewsItem {
   id: string;
