@@ -208,7 +208,7 @@ const GDGTeam: React.FC = () => {
               />
             )}
             {isAuthenticated && editing !== member.id && (
-              <div className="flex gap-2 mt-2 rounded-lg border border-gray-500 p-2">
+              <div className="flex gap-2 mt-2 rounded-lg border border-gray-500 p-2  justify-center items-center">
                 <button
                   onClick={() => handleEdit(member.id, member.Name, member.Image, member.Linkedin, member.Instagram)}
                   className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700"
@@ -227,7 +227,7 @@ const GDGTeam: React.FC = () => {
         ))}
       </section>
 
-      <div className="mt-8 rounded-lg border border-gray-500 px-2 py-2">
+      <div className="mt-8 rounded-lg border border-gray-500 px-2 py-2 flex justify-center items-center ">
         {isAuthenticated ? (
           <div className="space-y-4">
             <input
