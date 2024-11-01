@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
                   alt="Logo"
                   width={200}
                   height={200}
-                  className="hidden md:block max-h-full w-full min-w-[180px] max-w-[450px]"
+                  className="hidden md:block max-h-full w-full min-w-[50px] max-w-[100px]"
                   quality={100}
                 />
                 <Image
@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
                     key={item.name}
                     href={item.href}
                     style={{ backgroundColor: item.color }}
-                    className="hero-text rounded-md px-3 py-2 text-center text-black transition-colors duration-200 hover:bg-gray-700 hover:text-white dark:text-white"
+                    className="hero-text rounded-full px-3 py-2 text-center text-black transition-colors duration-200 hover:bg-gray-700 hover:text-white dark:text-white"
                   >
                     {item.name}
                   </Link>
@@ -125,7 +125,7 @@ const Navbar: React.FC = () => {
                   key={item.name}
                   href={item.href}
                   style={{ backgroundColor: item.color }}
-                  className="rounded-md px-3 py-2 font-medium text-black transition-colors duration-200 hover:bg-gray-700 hover:text-white dark:text-white"
+                  className="rounded-full px-3 py-2 font-medium text-black transition-colors duration-200 hover:bg-gray-700 hover:text-white dark:text-white"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
