@@ -3,14 +3,14 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { color } from 'three/webgpu'
 
 const navItems = [
-  { name: 'Home', href: '/#home' },
-  { name: 'About Us', href: '/#about' },
-  { name: 'What We Do', href: '/#services' },
-  { name: 'Events', href: '/#events' },
-  { name: 'Our Team', href: '/#team' },
-  { name: 'Contact Us', href: '/#contact' },
+  //home and contact us will be on home page and image link
+  { name: 'Events', href: '/Highlights' ,color:' #DB4437'},
+  { name: 'Our Team', href: '/TeamGDG' ,color:'#0F9D58'},
+  { name: 'What We Do', href: '/#services',color:'#4285F4' },
+  { name: 'About Us', href: '/About' ,color:'#F4B400'},
 ]
 
 const Navbar: React.FC = () => {
@@ -65,17 +65,9 @@ const Navbar: React.FC = () => {
                     <Image
                       src="/logo.png"
                       alt="Google Developer Student Clubs Logo"
-                      width={10000}
-                      height={10000}
+                      width={200}
+                      height={200}
                       className="hidden max-h-[100%] w-full min-w-[180px] max-w-[450px] dark:block"
-                      quality={100}
-                    />
-                    <Image
-                      src="/logo.png"
-                      alt="Google Developer Student Clubs Logo"
-                      width={10000}     
-                      height={10000}
-                      className="max-h-[100%] w-full min-w-[180px] max-w-[450px] dark:hidden"
                       quality={100}
                     />
                   </div>
@@ -83,8 +75,8 @@ const Navbar: React.FC = () => {
                   <Image
                       src="/logo.png"
                       alt="Google Developer Student Clubs Logo"
-                      width={10000}
-                      height={10000}
+                      width={200}
+                      height={200}
                       className="  max-w-[85px] translate-y-[2px] dark: "
                       quality={100}
                     />
@@ -97,12 +89,13 @@ const Navbar: React.FC = () => {
                 <div className="ml-10 flex items-baseline space-x-4">
                   {navItems.map((item) => (
                     <Link
-                      key={item.name}
-                      href={item.href}
-                      className={`text-vn hero-text rounded-md px-3 py-2 text-center text-black transition-colors duration-200 hover:bg-gray-700 hover:text-white dark:text-white`}
-                    >
-                      {item.name}
-                    </Link>
+                    key={item.name}
+                    href={item.href}
+                    style={{ backgroundColor: item.color }}
+                    className={`text-vn hero-text rounded-md px-3 py-2 text-center text-black transition-colors duration-200 hover:bg-gray-700 hover:text-white dark:text-white`}
+                  >
+                    {item.name}
+                  </Link>
                   ))}
                 </div>
               </div>
