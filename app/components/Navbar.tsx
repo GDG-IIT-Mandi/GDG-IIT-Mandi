@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
                 <Link href="/" className="flex justify-center vn:justify-start">
                   <div className='md:block hidden'>
                     <Image
-                      src="/logo.png"
+                      src="/logo.webp"
                       alt="Google Developer Student Clubs Logo"
                       width={10000}
                       height={10000}
@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
                       quality={100}
                     />
                     <Image
-                      src="/logo.png"
+                      src="/logo.webp"
                       alt="Google Developer Student Clubs Logo"
                       width={10000}     
                       height={10000}
@@ -81,7 +81,7 @@ const Navbar: React.FC = () => {
                   </div>
                   <div className='md:hidden'>
                   <Image
-                      src="/logo.png"
+                      src="/logo.webp"
                       alt="Google Developer Student Clubs Logo"
                       width={10000}
                       height={10000}
