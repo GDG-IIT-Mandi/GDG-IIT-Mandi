@@ -1,11 +1,10 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import { auth, db, storage } from "./firebase";
 import { collection, getDocs, updateDoc, doc, addDoc, deleteDoc } from "firebase/firestore"; 
 import { ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage"; 
 import { onAuthStateChanged } from "firebase/auth";
 import { signInWithGoogle, logout } from "./authservice";
-import styles from "./GDGTeam.module.css";
 import ProfileCard from "./ProfileCard";
 
 interface Member {
@@ -150,43 +149,51 @@ const GDGTeam: React.FC = () => {
   };
 
   return (
-    <div>
-      <h3 className={styles.sectionTitle}>Core Team</h3>
-      <section className={styles.profile}>
+    <div className="p-6">
+      <h3 className="text-3xl font-bold text-center mb-8">
+        <span style={{ color: '#DB4437' }}>Co</span>
+        <span style={{ color: '#0F9D58' }}>re</span>
+        <span style={{ color: '#4285F4' }}> Te</span>
+        <span style={{ color: '#F4B400' }}>am</span>
+      </h3>
+      <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {items.map((member) => (
           <div key={member.id}>
             {editing === member.id ? (
-              <div>
+              <div className="space-y-4">
                 <input
                   type="text"
                   value={editName}
                   onChange={(e) => setEditName(e.target.value)}
-                  className={styles.input}
+                  className="w-full p-2 border border-gray-300 rounded"
                 />
                 <input
                   type="file"
-                  onChange={(e) => setEditImageFile(e.target.files ? e.target.files[0] : null)} // Update file state
-                  className={styles.input}
+                  onChange={(e) => setEditImageFile(e.target.files ? e.target.files[0] : null)}
+                  className="w-full p-2 border border-gray-300 rounded"
                 />
                 <input
                   type="text"
                   value={editLinkedin}
                   onChange={(e) => setEditLinkedin(e.target.value)}
-                  className={styles.input}
+                  className="w-full p-2 border border-gray-300 rounded"
                 />
                 <input
                   type="text"
                   value={editInstagram}
                   onChange={(e) => setEditInstagram(e.target.value)}
-                  className={styles.input}
+                  className="w-full p-2 border border-gray-300 rounded"
                 />
-                <div className={styles.editingButtons}>
-                  <button onClick={() => saveEdit(member.id)} className={styles.button}>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => saveEdit(member.id)}
+                    className="px-4 py-2 text-white bg-green-600 rounded hover:bg-green-700"
+                  >
                     Save
                   </button>
                   <button
                     onClick={() => setEditing(null)}
-                    className={`${styles.button} ${styles.cancelButton}`}
+                    className="px-4 py-2 text-white bg-gray-600 rounded hover:bg-gray-700"
                   >
                     Cancel
                   </button>
@@ -201,16 +208,16 @@ const GDGTeam: React.FC = () => {
               />
             )}
             {isAuthenticated && editing !== member.id && (
-              <div>
+              <div className="flex gap-2 mt-2 rounded-lg border border-gray-500 p-2">
                 <button
                   onClick={() => handleEdit(member.id, member.Name, member.Image, member.Linkedin, member.Instagram)}
-                  className={styles.button}
+                  className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700"
                 >
                   Edit
                 </button>
                 <button
                   onClick={() => handleDelete(member.id, member.Image)}
-                  className={`${styles.button} ${styles.deleteButton}`}
+                  className="px-4 py-2 text-white bg-red-600 rounded hover:bg-red-700"
                 >
                   Delete
                 </button>
@@ -220,46 +227,55 @@ const GDGTeam: React.FC = () => {
         ))}
       </section>
 
-      <div className={styles.container}>
+      <div className="mt-8 rounded-lg border border-gray-500 px-2 py-2">
         {isAuthenticated ? (
-          <div className={styles.addItemForm}>
+          <div className="space-y-4">
             <input
               type="text"
               placeholder="Name"
               value={newName}
               onChange={(e) => setNewName(e.target.value)}
-              className={styles.input}
+              className="w-full p-2 border border-gray-300 rounded"
             />
             <input
               type="file"
               onChange={(e) => setNewImage(e.target.files ? e.target.files[0] : null)}
-              className={styles.input}
+              className="w-full p-2 border border-gray-300 rounded"
             />
             <input
               type="text"
-              placeholder="Linkedin URL"
+              placeholder="LinkedIn URL"
               value={newLinkedin}
               onChange={(e) => setNewLinkedin(e.target.value)}
-              className={styles.input}
+              className="w-full p-2 border border-gray-300 rounded"
             />
             <input
               type="text"
               placeholder="Instagram URL"
               value={newInstagram}
               onChange={(e) => setNewInstagram(e.target.value)}
-              className={styles.input}
+              className="w-full p-2 border border-gray-300 rounded"
             />
-            <div className={styles.editingButtons}>
-              <button onClick={handleAddItem} className={`${styles.button} ${styles.signInOutButton}`}>
+            <div className="flex gap-2">
+              <button
+                onClick={handleAddItem}
+                className="px-4 py-2 text-white bg-green-600 rounded hover:bg-green-700"
+              >
                 Add Member
               </button>
-              <button onClick={handleSignOut} className={`${styles.button} ${styles.signInOutButton}`}>
+              <button
+                onClick={handleSignOut}
+                className="px-4 py-2 text-white bg-red-600 rounded hover:bg-red-700"
+              >
                 Sign Out
               </button>
             </div>
           </div>
         ) : (
-          <button onClick={handleSignIn} className={`${styles.button} ${styles.signInOutButton}`}>
+          <button
+            onClick={handleSignIn}
+            className="px-4 py-2 mt-4 text-white bg-blue-600 rounded hover:bg-blue-700"
+          >
             Sign In to Add Member
           </button>
         )}

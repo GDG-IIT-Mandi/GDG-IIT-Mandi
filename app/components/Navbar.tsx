@@ -5,9 +5,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const navItems = [
-  { name: 'Events', href: '/Highlights', color: '#DB4437' },
-  { name: 'Our Team', href: '/TeamGDG', color: '#0F9D58' },
-  { name: 'What We Do', href: '/#services', color: '#4285F4' },
+  { name: 'What We Do', href: '/#services', color: '#DB4437' },
+  { name: 'Highlights', href: '/Highlights', color: '#0F9D58' },
+  { name: 'Team GDG', href: '/TeamGDG', color: '#4285F4' },
   { name: 'About Us', href: '/About', color: '#F4B400' },
 ]
 
@@ -61,7 +61,11 @@ const Navbar: React.FC = () => {
                   className="md:hidden max-w-[85px] translate-y-[2px]"
                   quality={100}
                 />
+                <span className="text-lg font-semibold text-black dark:text-white rounded-full border border-gray-500 px-3 py-1 bg-gray-800 ">
+                  IIT Mandi
+                </span>
               </Link>
+              
 
               {/* Desktop navigation */}
               <div className="hidden md:flex space-x-4">
