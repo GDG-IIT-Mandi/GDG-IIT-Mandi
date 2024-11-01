@@ -16,15 +16,14 @@ const Hero: React.FC = () => {
       background.style.position = 'fixed';
       background.style.top = '0';
       background.style.left = '0';
-      background.style.zIndex = '-1'; // Keep background behind content
+      background.style.zIndex = '-1';
     }
   }, []);
 
   return (
     <div className="relative z-1 flex flex-col items-center pt-32">
       <div id="homepage-background"></div>
-      
-      {/* Load necessary scripts */}
+    
       <Script
         src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
         strategy="beforeInteractive"
@@ -50,11 +49,11 @@ const Hero: React.FC = () => {
         });`}
       </Script>
 
-      {/* Floating Side Divs */}
+
       <motion.div
         className="absolute left-[40%] w-12 h-12 rounded-md"
-        initial={{ x: 0 }} // Start at center
-        animate={{ x: -150, y: ["0", "-10px", "0px"] }} // Move left and then float
+        initial={{ x: 0 }}
+        animate={{ x: -150, y: ["0", "-10px", "0px"] }} 
         transition={{
           x: { duration: 1.5, ease: "easeOut" },
           y: { duration: 2, repeat: Infinity, ease: "easeInOut" },
@@ -70,8 +69,8 @@ const Hero: React.FC = () => {
       </motion.div>
       <motion.div
         className="absolute right-[40%] w-12 h-12 rounded-md"
-        initial={{ x: 0 }} // Start at center
-        animate={{ x: 150, y: ["0", "-10px", "0px"] }} // Move right and then float
+        initial={{ x: 0 }} 
+        animate={{ x: 150, y: ["0", "-10px", "0px"] }}
         transition={{
           x: { duration: 1.5, ease: "easeOut" },
           y: { duration: 2, repeat: Infinity, ease: "easeInOut" },
@@ -86,12 +85,11 @@ const Hero: React.FC = () => {
         />
       </motion.div>
 
-      {/* Typing Animation */}
       <TypeAnimation
         sequence={[
-          'GDG IIT Mandi', // Text to type
-          2000, // Wait 2 seconds at the end
-          () => setShowSubtitle(true), // Show the subtitle after the typing animation
+          'GDG IIT Mandi',
+          2000, 
+          () => setShowSubtitle(true), 
         ]}
         wrapper="h1"
         speed={50}
@@ -99,12 +97,11 @@ const Hero: React.FC = () => {
         repeat={0}
       />
 
-      {/* Subtitle that appears after the main text with framer-motion */}
       {showSubtitle && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }} // 0.5-second delay for smooth entrance
+          transition={{ duration: 0.8, delay: 0.5 }} 
           className="mt-5 text-xl text-white justify-center"
         >
           Welcome to the Google Developer Group at IIT Mandi
