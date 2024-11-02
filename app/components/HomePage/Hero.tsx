@@ -5,6 +5,7 @@ import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+
 const Hero: React.FC = () => {
   const [showSubtitle, setShowSubtitle] = useState(false);
 
@@ -98,6 +99,7 @@ const Hero: React.FC = () => {
 
       {showSubtitle && (
         <Link href="#aboutUsSection">
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -117,6 +119,7 @@ const Hero: React.FC = () => {
       )}
       
       <div className="pb-[100vh]" /> {/* Adjust value as needed */}
+
     </div>
   );
 };
