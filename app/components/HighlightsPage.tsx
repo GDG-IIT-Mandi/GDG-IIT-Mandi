@@ -5,7 +5,6 @@ import { collection, getDocs, updateDoc, doc, addDoc, deleteDoc } from "firebase
 import { ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage";
 import { onAuthStateChanged } from "firebase/auth";
 import { signInWithGoogle, logout } from "./authservice";
-import styles from "./HighlightsPage.module.css";
 
 interface NewsItem {
   id: string;
@@ -151,7 +150,7 @@ const NewsAndEvents: React.FC = () => {
 
   return (
     <div>
-      <section className="flex flex-col lg:flex-row gap-10 p-16 text-gray-900">
+      <section className="flex flex-col lg:flex-row gap-10 p-12 text-gray-900">
         <div className="flex-1 min-w-[300px]">
           <h3 className="text-2xl mb-6 text-blue-600 text-center font-bold">
             <span className="text-red-600">E</span>
@@ -213,7 +212,7 @@ const NewsAndEvents: React.FC = () => {
                     </>
                   )}
                 </div>
-                <img src={event.Image} alt="event image" className="w-48 h-48 object-cover rounded-lg" />
+                <img src={event.Image} alt="event image" className="w-48 h-48 object-fill rounded-lg min-w-[20px] min-h-[20px]" />
               </li>
             ))}
           </ul>
@@ -278,7 +277,7 @@ const NewsAndEvents: React.FC = () => {
                     </>
                   )}
                 </div>
-                <img src={news.Image} alt="event image" className="w-48 h-48 object-cover rounded-lg" />
+                <img src={news.Image} alt="event image" className="w-48 h-48 object-fill rounded-lg min-w-[20px] min-h-[20px]" />
               </li>
             ))}
           </ul>
