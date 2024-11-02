@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Hero: React.FC = () => {
   const [showSubtitle, setShowSubtitle] = useState(false);
@@ -23,7 +24,7 @@ const Hero: React.FC = () => {
   return (
     <div className="relative z-1 flex flex-col items-center pt-32">
       <div id="homepage-background"></div>
-    
+
       <Script
         src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
         strategy="beforeInteractive"
@@ -48,7 +49,6 @@ const Hero: React.FC = () => {
           showLines: false
         });`}
       </Script>
-
 
       <motion.div
         className="absolute left-[40%] w-12 h-12 rounded-md"
@@ -98,15 +98,28 @@ const Hero: React.FC = () => {
       />
 
       {showSubtitle && (
+        <Link href="#aboutUsSection">
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }} 
-          className="mt-5 text-xl text-white justify-center"
+          className="mt-5 flex flex-col items-center text-xl text-white justify-center "
         >
-          Welcome to the Google Developer Group at IIT Mandi
+          <p>Welcome to the Google Developer Group at IIT Mandi</p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="mt-6 px-6 py-3 rounded-full bg-[#4285F4] text-white font-semibold flex items-center justify-center gap-2 shadow-lg transition-all duration-200 hover:bg-[#357ae8]"
+          >
+                        Explore
+          </motion.button>
         </motion.div>
+        </Link>
       )}
+      
+      <div className="pb-[100vh]" /> {/* Adjust value as needed */}
+
     </div>
   );
 };

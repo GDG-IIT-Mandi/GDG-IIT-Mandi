@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
                   IIT Mandi
                 </span>
               </Link>
-              
+
 
               {/* Desktop navigation */}
               <div className="hidden md:flex space-x-4">
