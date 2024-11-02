@@ -3,14 +3,15 @@ import Link from 'next/link';
 
 interface ProfileCardProps {
   name: string;
+  designation: string;
   imageSrc: string;
   linkedinUrl: string;
   instagramUrl: string;
 }
 
-const ProfileCard = ({ name, imageSrc, linkedinUrl, instagramUrl }: ProfileCardProps) => {
+const ProfileCard = ({ name,designation, imageSrc, linkedinUrl, instagramUrl }: ProfileCardProps) => {
   return (
-    <div className="relative w-80 max-w-sm mx-auto overflow-hidden bg-white shadow-lg transition duration-500 hover:scale-105 hover:shadow-xl px-2 py-2">
+    <div className="relative w-80 max-w-sm mx-auto overflow-hidden bg-white shadow-lg transition duration-500 hover:scale-105 hover:shadow-xl px-2 py-2 inline-block">
       {/* Profile Image */}
       <div className="h-64 w-full overflow-hidden ">
         <img
@@ -24,7 +25,7 @@ const ProfileCard = ({ name, imageSrc, linkedinUrl, instagramUrl }: ProfileCardP
       <div className="p-3 flex justify-between items-center">
       <h2 className="text-lg font-semibold text-gray-800">
         {name}
-      <span className="block text-sm text-gray-600">Designation</span>
+      <span className="block text-sm text-gray-600">{designation}</span>
       </h2>
         <div className="flex space-x-3">
           

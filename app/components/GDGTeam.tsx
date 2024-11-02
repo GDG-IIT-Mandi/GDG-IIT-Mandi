@@ -10,6 +10,7 @@ import ProfileCard from "./ProfileCard";
 interface Member {
   id: string;
   Name: string;
+  Designation: string;
   Image: string;
   Linkedin: string;
   Instagram: string;
@@ -20,11 +21,13 @@ const GDGTeam: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [editing, setEditing] = useState<string | null>(null);
   const [editName, setEditName] = useState<string>("");
+  const [editDesignation, setEditDesignation] = useState<string>("");
   const [editImageFile, setEditImageFile] = useState<File | null>(null);
   const [editImageURL, setEditImageURL] = useState<string>(""); 
   const [editLinkedin, setEditLinkedin] = useState<string>("");
   const [editInstagram, setEditInstagram] = useState<string>("");
   const [newName, setNewName] = useState<string>("");
+  const [newDesignation, setNewDesignation] = useState<string>("");
   const [newImage, setNewImage] = useState<File | null>(null); 
   const [newLinkedin, setNewLinkedin] = useState<string>("");
   const [newInstagram, setNewInstagram] = useState<string>("");
@@ -74,6 +77,7 @@ const GDGTeam: React.FC = () => {
 
       const docRef = await addDoc(collection(db, "Members"), {
         Name: newName,
+        Designation: newDesignation,
         Image: imageUrl,
         Linkedin: newLinkedin,
         Instagram: newInstagram,
@@ -81,10 +85,11 @@ const GDGTeam: React.FC = () => {
 
       setItems((prevItems) => [
         ...prevItems,
-        { id: docRef.id, Name: newName, Image: imageUrl, Linkedin: newLinkedin, Instagram: newInstagram },
+        { id: docRef.id, Name: newName,Designation: newDesignation, Image: imageUrl, Linkedin: newLinkedin, Instagram: newInstagram },
       ]);
 
       setNewName("");
+      setNewDesignation("");
       setNewImage(null);
       setNewLinkedin("");
       setNewInstagram("");
@@ -93,9 +98,10 @@ const GDGTeam: React.FC = () => {
     }
   };
 
-  const handleEdit = (id: string, Name: string, Image: string, Linkedin: string, Instagram: string) => {
+  const handleEdit = (id: string, Name: string,Designation: string, Image: string, Linkedin: string, Instagram: string) => {
     setEditing(id);
     setEditName(Name);
+    setEditDesignation(Designation);
     setEditImageURL(Image); 
     setEditLinkedin(Linkedin);
     setEditInstagram(Instagram);
@@ -115,6 +121,7 @@ const GDGTeam: React.FC = () => {
       const itemRef = doc(db, "Members", id);
       await updateDoc(itemRef, {
         Name: editName,
+        Designation: editDesignation,
         Image: imageUrl,
         Linkedin: editLinkedin,
         Instagram: editInstagram,
@@ -123,7 +130,7 @@ const GDGTeam: React.FC = () => {
       setItems((prevItems) =>
         prevItems.map((item) =>
           item.id === id
-            ? { ...item, Name: editName, Image: imageUrl, Linkedin: editLinkedin, Instagram: editInstagram }
+            ? { ...item, Name: editName,Designation: editDesignation, Image: imageUrl, Linkedin: editLinkedin, Instagram: editInstagram }
             : item
         )
       );
@@ -156,7 +163,7 @@ const GDGTeam: React.FC = () => {
         <span style={{ color: '#4285F4' }}> Te</span>
         <span style={{ color: '#F4B400' }}>am</span>
       </h3>
-      <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 text-gray-950">
         {items.map((member) => (
           <div key={member.id}>
             {editing === member.id ? (
@@ -165,6 +172,12 @@ const GDGTeam: React.FC = () => {
                   type="text"
                   value={editName}
                   onChange={(e) => setEditName(e.target.value)}
+                  className="w-full p-2 border border-gray-300 rounded"
+                />
+                <input
+                  type="text"
+                  value={editDesignation}
+                  onChange={(e) => setEditDesignation(e.target.value)}
                   className="w-full p-2 border border-gray-300 rounded"
                 />
                 <input
@@ -202,6 +215,7 @@ const GDGTeam: React.FC = () => {
             ) : (
               <ProfileCard
                 name={member.Name}
+                designation={member.Designation}
                 imageSrc={member.Image}
                 linkedinUrl={member.Linkedin}
                 instagramUrl={member.Instagram}
@@ -210,7 +224,7 @@ const GDGTeam: React.FC = () => {
             {isAuthenticated && editing !== member.id && (
               <div className="flex gap-2 mt-2 rounded-lg border border-gray-500 p-2  justify-center items-center">
                 <button
-                  onClick={() => handleEdit(member.id, member.Name, member.Image, member.Linkedin, member.Instagram)}
+                  onClick={() => handleEdit(member.id, member.Name,member.Designation, member.Image, member.Linkedin, member.Instagram)}
                   className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700"
                 >
                   Edit
@@ -227,7 +241,7 @@ const GDGTeam: React.FC = () => {
         ))}
       </section>
 
-      <div className="mt-8 rounded-lg border border-gray-500 px-2 py-2 flex justify-center items-center ">
+      <div className="mt-8 rounded-lg border border-gray-500 px-2 py-2 flex justify-center items-center text-gray-950">
         {isAuthenticated ? (
           <div className="space-y-4">
             <input
@@ -235,6 +249,13 @@ const GDGTeam: React.FC = () => {
               placeholder="Name"
               value={newName}
               onChange={(e) => setNewName(e.target.value)}
+              className="w-full p-2 border border-gray-300 rounded"
+            />
+            <input
+              type="text"
+              placeholder="Designation"
+              value={newDesignation}
+              onChange={(e) => setNewDesignation(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded"
             />
             <input
