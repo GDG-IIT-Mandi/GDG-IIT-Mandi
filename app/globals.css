@@ -15,7 +15,6 @@ body {
 }
 
 main {
-  max-width: 1200px; 
   padding: 6rem 1rem;
   box-sizing: border-box;
 }
