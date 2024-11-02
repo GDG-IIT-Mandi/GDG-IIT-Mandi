@@ -34,7 +34,7 @@ const HorizontalScrollBackground: React.FC = () => {
               minWidth: "180px", 
               minHeight: "80px", 
               margin: "0 15px",
-              overflow: "hidden", // Ensure the image fits within the bounds
+              overflow: "hidden", 
             }}
           >
             <Image
@@ -42,7 +42,7 @@ const HorizontalScrollBackground: React.FC = () => {
               alt="Google Developer Student Clubs Logo"
               width={180}   
               height={100}   
-              className="w-full h-full object-cover" // Cover the entire div while maintaining aspect ratio
+              className="w-full h-full object-cover"
             />
           </div>
         ))}
