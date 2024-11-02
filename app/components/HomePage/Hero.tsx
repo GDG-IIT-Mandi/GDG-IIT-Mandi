@@ -92,7 +92,7 @@ const Hero: React.FC = () => {
           () => setShowSubtitle(true), 
         ]}
         wrapper="h1"
-        speed={50}
+        speed={80}
         className="text-4xl font-bold text-white drop-shadow-lg"
         repeat={0}
       />
@@ -103,7 +103,7 @@ const Hero: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }} 
+          transition={{ duration: 0.4, delay: 0.1 }} 
           className="mt-5 flex flex-col items-center text-xl text-white justify-center "
         >
           <p>Welcome to the Google Developer Group at IIT Mandi</p>

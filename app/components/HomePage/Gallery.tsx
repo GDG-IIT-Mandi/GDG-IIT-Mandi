@@ -38,7 +38,7 @@ const HorizontalScrollBackground: React.FC = () => {
             }}
           >
             <Image
-              src="/assets/vinamra.webp" 
+              src="/galleryHomepage/symbol.webp" 
               alt="Google Developer Student Clubs Logo"
               width={180}   
               height={100}   

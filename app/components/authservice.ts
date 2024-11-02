@@ -20,7 +20,7 @@ export const logout = async () => {
     throw new Error(error.message);
   }
 };
-//code to allow only one gmail to chane the db
+//code to allow only one gmail to change the db
 
 // import { auth } from './firebase';
 // import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
