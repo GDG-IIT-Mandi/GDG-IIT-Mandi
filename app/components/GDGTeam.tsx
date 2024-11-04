@@ -185,7 +185,7 @@ const GDGTeam: React.FC = () => {
     };
   }, []);
   return (
-    <div className="p-6">
+    <div className="p-2">
       <h3 className="text-3xl font-bold text-center mb-8">
         <span style={{ color: '#DB4437' }}>Co</span>
         <span style={{ color: '#0F9D58' }}>re</span>

@@ -150,8 +150,8 @@ const NewsAndEvents: React.FC = () => {
 
   return (
     <div>
-      <section className="flex flex-col lg:flex-row gap-10 p-12 text-gray-900">
-        <div className="flex-1 min-w-[300px]">
+      <section className="flex flex-col lg:flex-row gap-10 p-3 text-gray-900">
+        <div className="flex-1 min-w-[200px]">
           <h3 className="text-2xl mb-6 text-blue-600 text-center font-bold">
             <span className="text-red-600">E</span>
             <span className="text-green-600">v</span>
