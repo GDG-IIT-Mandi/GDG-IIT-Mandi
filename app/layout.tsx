@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "GDG IIT Mandi",
-  description: "Created by Vinamra Garg",
+  description: "Created by Vinamra Garg and Mehul Sharma",
 };
 
 export default function RootLayout({

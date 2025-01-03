@@ -5,6 +5,7 @@ import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+
 const Hero: React.FC = () => {
   const [showSubtitle, setShowSubtitle] = useState(false);
 
@@ -91,17 +92,18 @@ const Hero: React.FC = () => {
           () => setShowSubtitle(true), 
         ]}
         wrapper="h1"
-        speed={50}
+        speed={80}
         className="text-4xl font-bold text-white drop-shadow-lg"
         repeat={0}
       />
 
       {showSubtitle && (
         <Link href="#aboutUsSection">
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }} 
+          transition={{ duration: 0.4, delay: 0.1 }} 
           className="mt-5 flex flex-col items-center text-xl text-white justify-center "
         >
           <p>Welcome to the Google Developer Group at IIT Mandi</p>
@@ -117,6 +119,7 @@ const Hero: React.FC = () => {
       )}
       
       <div className="pb-[100vh]" /> {/* Adjust value as needed */}
+
     </div>
   );
 };
