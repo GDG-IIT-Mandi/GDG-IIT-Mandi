@@ -1,0 +1,49 @@
+.footer {
+    color: #a268ff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 16px;
+  }
+  
+  .social-link {
+    color: #a268ff;  /* Updated to use the same color */
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-link:hover {
+    transform: scale(1.1);
+  }
+  
+  .facebook:hover {
+    color: #1877f2;
+  }
+  
+  .github:hover {
+    color: #333;
+  }
+  
+  .instagram:hover {
+    color: #e1306c;
+  }
+  
+  .youtube:hover {
+    color: #ff0000;
+  }
+  
+  .twitter:hover {
+    color: #1da1f2;
+  }
+  
+  .footer-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #a268ff;  /* Updated to use the same color */
+  }
+  

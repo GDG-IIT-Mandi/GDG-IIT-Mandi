@@ -1,0 +1,41 @@
+.sponsor-marquee {
+  display: flex;
+  animation: marquee 20s linear infinite;  /* Adjust the speed of scrolling */
+  white-space: nowrap;  /* Prevent wrapping */
+}
+
+.sponsor-marquee div {
+  display: inline-block;
+  margin-right: 32px; /* Adjust spacing between logos */
+}
+
+.sponsor-marquee img {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out;
+}
+
+.sponsor-marquee img:hover {
+  filter: grayscale(0);
+}
+
+.sponsor-marquee a {
+  display: inline-block;
+}
+
+.sponsor-marquee .transition-transform {
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.sponsor-marquee .transition-transform:hover {
+  transform: scale(1.1);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

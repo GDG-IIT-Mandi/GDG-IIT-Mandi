@@ -1,7 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: 'Arcade Gamer';
+  src: url('./fonts/arcade-gamer.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
 
+body {
+  font-family: 'Arcade Gamer', sans-serif;
+}
 body {
   font-family: Arial, sans-serif;
   background-color: black;

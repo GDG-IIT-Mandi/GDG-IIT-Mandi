@@ -1,0 +1,15 @@
+@keyframes sparkle-border {
+  0% {
+    box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 8px 4px rgba(255, 255, 255, 1), 0 0 15px 4px rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.7);
+  }
+}
+
+.sparkle-button {
+  animation: sparkle-border 10s infinite ease-in-out;
+}
