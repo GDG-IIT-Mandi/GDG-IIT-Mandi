@@ -17,12 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <div className={inter.className} suppressHydrationWarning>
         {/* <Navbar /> */}
         <Provider>{children}</Provider>
         {/* <Footer /> */}
-      </body>
-    </html>
+      </div>
   );
 }
