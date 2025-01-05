@@ -2,8 +2,11 @@
 import React, { useEffect } from 'react';
 import 'tailwindcss/tailwind.css';
 import Hero from '../components/KrackHack/Hero';
-import Footer from '../components/KrackHack/Footer';
+import Footer from '../components/Footer';
 import Sponsor from '../components/KrackHack/sponsors';
+import AboutUs from '../components/KrackHack/About';
+import { Gallery } from '../components/KrackHack/Gallery';
+import ContactUs from '../components/KrackHack/ContactUs';
 
 const KrackHack: React.FC = () => {
     useEffect(() => {
@@ -26,7 +29,10 @@ const KrackHack: React.FC = () => {
   return (
     <>
         <Hero></Hero>
+        <AboutUs></AboutUs>
+        <Gallery></Gallery>
         <Sponsor></Sponsor>
+        <ContactUs></ContactUs>
         <Footer></Footer>
     </>
   );

@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./Footer.module.css";
+
 import Image from 'next/image';
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer >
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
       <div className="footer-social-icons">
         <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="social-link facebook">

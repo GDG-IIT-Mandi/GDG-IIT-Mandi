@@ -1,5 +1,6 @@
 import React from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
+import { Image } from '@chakra-ui/react';
 import Link from 'next/link';
 import './sponsor.css';
 
@@ -14,7 +15,7 @@ const sponsors = [
 const Sponsor: React.FC = () => {
   return (
     <div className="relative w-full mt-8 bg-black py-12">
-      <h2 className="text-center text-4xl font-bold text-white mb-6">
+      <h2 className="text-center text-4xl font-bold text-white mb-6 font-arcade">
         Our Past Sponsors
       </h2>
 
@@ -25,7 +26,7 @@ const Sponsor: React.FC = () => {
             <div key={index} className="transition-transform transform hover:scale-110">
               <Link legacyBehavior href={sponsor.link} passHref>
                 <a target="_blank">
-                  <Image
+                  <Image rounded={"md"}
                     src={sponsor.src}
                     alt={`Sponsor ${index}`}
                     width={400}  // Increased width

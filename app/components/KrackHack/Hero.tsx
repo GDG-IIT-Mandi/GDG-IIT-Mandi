@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 const Hero: React.FC = () => {
   const [showSubtitle, setShowSubtitle] = useState(false);
-  const [statsVisible, setStatsVisible] = useState(false); // For showing the stats box
+  const [statsVisible, setStatsVisible] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
   // State for growing stats
@@ -37,7 +37,6 @@ const Hero: React.FC = () => {
       setStatsVisible(true);
     }, 1500); 
     window.addEventListener('scroll', handleScroll);
-    // Simulate growing stats (counting effect)
     countUp(0, 3500, 6000, setParticipants);
     countUp(0, 6, 6000, setSponsors); 
 
