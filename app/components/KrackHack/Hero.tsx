@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
       <div id="homepage-background"></div>
 
       <motion.div
-        className="absolute left-[40%] w-12 h-12 rounded-md"
+        className="absolute left-[40%] w-12 h-12 rounded-md sm:block hidden"
         initial={{ x: 0 }}
         animate={{ x: -150, y: ["0", "-10px", "0px"] }} 
         transition={{
@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
         />
       </motion.div>
       <motion.div
-        className="absolute right-[40%] w-12 h-12 rounded-md"
+        className="absolute right-[40%] w-12 h-12 rounded-md sm:block hidden"
         initial={{ x: 0 }} 
         animate={{ x: 150, y: ["0", "-10px", "0px"] }}
         transition={{
@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
         ]}
         wrapper="h1"
         speed={50}
-        className="text-4xl font-bold text-purple-600 drop-shadow-lg font-arcade"
+        className="lg:text-4xl sm:text-2xl  text-purple-600 drop-shadow-lg font-arcade"
         repeat={0}
       />
 
@@ -142,7 +142,7 @@ const Hero: React.FC = () => {
 
       )}
 
-      <div className="pb-[50vh]" />
+      <div className="pb-[20vh]" />
     </div>
   );
 };

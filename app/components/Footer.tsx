@@ -22,7 +22,7 @@ const Footer = () => {
           <i className="fab fa-twitter"></i>
         </a>
       </div>
-      <p className="mt-2 text-sm text-white">Copyright &copy; 2024 All rights reserved by GDG, IIT Mandi</p>
+      <p className="mt-2 text-sm text-white">Copyright &copy; 2025 All rights reserved by GDG, IIT Mandi</p>
     </footer>
   );
 };

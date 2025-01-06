@@ -7,6 +7,8 @@ import Sponsor from '../components/KrackHack/sponsors';
 import AboutUs from '../components/KrackHack/About';
 import { Gallery } from '../components/KrackHack/Gallery';
 import ContactUs from '../components/KrackHack/ContactUs';
+import Winners from '../components/KrackHack/winners';
+import Stats from '../components/KrackHack/stats';
 
 const KrackHack: React.FC = () => {
     useEffect(() => {
@@ -30,6 +32,8 @@ const KrackHack: React.FC = () => {
     <>
         <Hero></Hero>
         <AboutUs></AboutUs>
+        <Stats></Stats>
+        <Winners></Winners>
         <Gallery></Gallery>
         <Sponsor></Sponsor>
         <ContactUs></ContactUs>
