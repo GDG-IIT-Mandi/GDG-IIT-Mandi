@@ -37,7 +37,7 @@ export default function Home() {
   return (
     <main className="main">
       <div
-        onClick={() => (window.location.href = "/krackhack")}
+        onClick={() => (window.location.href = "/Krackhack")}
         className="cursor-pointer">
         <Toaster />
       </div>

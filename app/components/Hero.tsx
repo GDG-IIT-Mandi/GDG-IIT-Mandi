@@ -5,6 +5,7 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { Zap } from "lucide-react";
 
 const Hero: React.FC = () => {
   const [showSubtitle, setShowSubtitle] = useState(false);
@@ -104,17 +105,51 @@ const Hero: React.FC = () => {
               </motion.button>
             </motion.div>
           </Link>
-          <Link href="/krackhack">
+          <Link href="/Krackhack">
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              className="mt-5 flex flex-col items-center text-xl text-white justify-center ">
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="flex flex-col items-center justify-center">
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-6 px-6 py-3 rounded-full bg-[#4285F4] text-white font-semibold flex items-center justify-center gap-2 shadow-lg transition-all duration-200 hover:bg-[#357ae8]">
-                Lets KrackHack(i need new style)!
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 20px #FF2E63, 0 0 40px #FF2E63",
+                }}
+                whileTap={{
+                  scale: 0.95,
+                  boxShadow: "0 0 10px #FF2E63",
+                }}
+                className="relative mt-6 px-10 py-4 rounded-full bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 text-white font-bold text-lg flex items-center gap-3 shadow-lg shadow-rose-500/20 transition-all duration-300 hover:from-rose-500 hover:via-pink-500 hover:to-purple-500 border border-rose-400/20">
+                <Zap className="w-5 h-5" />
+                Let's KrackHack!
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-10"
+                  initial={{ x: "-100%" }}
+                  animate={{ x: "100%" }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 2,
+                    ease: "linear",
+                    repeatDelay: 1,
+                  }}
+                />
+                <motion.div
+                  className="absolute inset-0 rounded-full"
+                  style={{
+                    border: "1px solid rgba(255, 46, 99, 0.3)",
+                    boxShadow: "0 0 10px rgba(255, 46, 99, 0.3)",
+                  }}
+                  animate={{
+                    opacity: [0.5, 0.8, 0.5],
+                    scale: [1, 1.02, 1],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                />
               </motion.button>
             </motion.div>
           </Link>
