@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect } from "react";
-import "tailwindcss/tailwind.css";
 import Hero from "./componentsSelf/Hero";
 import Sponsor from "./componentsSelf/sponsors";
 import AboutUs from "./componentsSelf/About";
@@ -28,15 +27,17 @@ const KrackHack: React.FC = () => {
     return () => observer.disconnect();
   }, []);
   return (
-    <Provider>
-      <Hero></Hero>
-      <AboutUs></AboutUs>
-      <Stats></Stats>
-      <Winners></Winners>
-      <Gallery></Gallery>
-      <Sponsor></Sponsor>
-      <ContactUs></ContactUs>
-    </Provider>
+    <main>
+      <Provider>
+        <Hero></Hero>
+        <AboutUs></AboutUs>
+        <Stats></Stats>
+        <Winners></Winners>
+        <Gallery></Gallery>
+        <Sponsor></Sponsor>
+        <ContactUs></ContactUs>
+      </Provider>
+    </main>
   );
 };
 
