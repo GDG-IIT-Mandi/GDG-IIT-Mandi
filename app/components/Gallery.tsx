@@ -1,15 +1,15 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { useViewportScroll, motion } from "framer-motion";
+import { useScroll, motion } from "framer-motion";
 import Image from "next/image"; 
 
 const HorizontalScrollBackground: React.FC = () => {
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useScroll();
   const [horizontalOffset, setHorizontalOffset] = useState(-1000); 
   const [opacity, setOpacity] = useState(0); 
 
   useEffect(() => {
-    return scrollY.onChange((latestScroll) => {
+    return scrollY.on("change",(latestScroll) => {
       setHorizontalOffset(-1000 + latestScroll * 2); 
       setOpacity(Math.min(latestScroll / 1000, 0.6));
     });

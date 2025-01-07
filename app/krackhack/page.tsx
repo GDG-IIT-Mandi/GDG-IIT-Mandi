@@ -1,43 +1,42 @@
-"use client"
-import React, { useEffect } from 'react';
-import 'tailwindcss/tailwind.css';
-import Hero from '../components/KrackHack/Hero';
-import Footer from '../components/Footer';
-import Sponsor from '../components/KrackHack/sponsors';
-import AboutUs from '../components/KrackHack/About';
-import { Gallery } from '../components/KrackHack/Gallery';
-import ContactUs from '../components/KrackHack/ContactUs';
-import Winners from '../components/KrackHack/winners';
-import Stats from '../components/KrackHack/stats';
+"use client";
+import React, { useEffect } from "react";
+import "tailwindcss/tailwind.css";
+import Hero from "./componentsSelf/Hero";
+import Footer from "../components/Footer";
+import Sponsor from "./componentsSelf/sponsors";
+import AboutUs from "./componentsSelf/About";
+import { Gallery } from "./componentsSelf/Gallery";
+import ContactUs from "./componentsSelf/ContactUs";
+import Winners from "./componentsSelf/winners";
+import Stats from "./componentsSelf/stats";
 
 const KrackHack: React.FC = () => {
-    useEffect(() => {
-        const elements = document.querySelectorAll('.animate-on-scroll');
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('animate-fadeIn');
-              }
-            });
-          },
-          { threshold: 0.1 }
-        );
-    
-        elements.forEach((el) => observer.observe(el));
-    
-        return () => observer.disconnect();
-      }, []);
+  useEffect(() => {
+    const elements = document.querySelectorAll(".animate-on-scroll");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fadeIn");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <>
-        <Hero></Hero>
-        <AboutUs></AboutUs>
-        <Stats></Stats>
-        <Winners></Winners>
-        <Gallery></Gallery>
-        <Sponsor></Sponsor>
-        <ContactUs></ContactUs>
-        <Footer></Footer>
+      <Hero></Hero>
+      <AboutUs></AboutUs>
+      <Stats></Stats>
+      <Winners></Winners>
+      <Gallery></Gallery>
+      <Sponsor></Sponsor>
+      <ContactUs></ContactUs>
     </>
   );
 };
