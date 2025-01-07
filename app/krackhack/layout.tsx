@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
-import { Provider } from "@/components/ui/provider";
+import { Provider } from "@/app/Krackhack/components/provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,10 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <div className={inter.className} suppressHydrationWarning>
-        {/* <Navbar /> */}
-        <Provider>{children}</Provider>
-        {/* <Footer /> */}
-      </div>
+    <div className={inter.className} suppressHydrationWarning>
+      {/* <Navbar /> */}
+      <Provider>{children}</Provider>
+      {/* <Footer /> */}
+    </div>
   );
 }

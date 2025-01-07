@@ -104,7 +104,7 @@ const Hero: React.FC = () => {
               </motion.button>
             </motion.div>
           </Link>
-          <Link href="/KrackHack">
+          <Link href="/Krackhack">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
