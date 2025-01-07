@@ -8,7 +8,7 @@ import ContactUs from "./componentsSelf/ContactUs";
 import Winners from "./componentsSelf/winners";
 import Stats from "./componentsSelf/stats";
 import { Provider } from "./components/provider";
-const KrackHack: React.FC = () => {
+export default function Krackhack() {
   useEffect(() => {
     const elements = document.querySelectorAll(".animate-on-scroll");
     const observer = new IntersectionObserver(
@@ -39,6 +39,4 @@ const KrackHack: React.FC = () => {
       </Provider>
     </main>
   );
-};
-
-export default KrackHack;
+}
