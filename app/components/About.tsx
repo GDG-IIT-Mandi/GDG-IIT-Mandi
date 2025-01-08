@@ -13,12 +13,21 @@ const AboutUs: React.FC = () => {
         </h2>
 
         <p className="text-lg md:text-xl text-center leading-relaxed mb-8 text-gray-300">
-          Welcome to GDG IIT Mandi! Our mission is to foster a vibrant tech
-          community for students passionate about Google Developer technologies.
-          We organize events, workshops, and hackathons to encourage
-          collaboration, learning, and growth among tech enthusiasts. Whether
-          you're a beginner or an experienced developer, GDG IIT Mandi is the
-          perfect place to connect, learn, and make an impact.
+          GDG stands for Google Developer Group. Google DGs are a program run by
+          Google to support and empower students who are interested in
+          technology. They provide resources and support for students to learn
+          and apply their skills, including access to Google technologies,
+          mentorship from Google experts, and opportunities to connect with
+          other students and professionals in the tech industry.<br></br>
+          GDG IIT Mandi was established in AY 2021-22 by Shubham Saurav
+          (B19222). The GDG Leads are chosen by Google itself through a
+          transparent application and interview process. It has conducted about
+          30 events since it started last year, including sessions, talks,
+          hackathons, bootcamps, study jams, etc. Kindly find more details about
+          the past events in the next section. Since GDG is a known and renowned
+          student club, we are often reached out by various speakers, other
+          colleges, and organisations such as Coding Ninjas, FOSS
+          for collaborations.
         </p>
 
         <div className="flex justify-center mt-8">

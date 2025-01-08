@@ -13,14 +13,13 @@ const WhatWeDo: React.FC = () => {
         </h2>
 
         <p className="text-lg md:text-xl text-center leading-relaxed mb-8 text-gray-300">
-          Welcome to GDG IIT Mandi! needs change needs change needs change needs
-          change needs change needs change needs change needs change needs
-          change needs change needs change needs change needs change needs
-          change needs change needs change needs change needs change needs
-          change needs change needs change needs change needs change needs
-          change needs change needs change needs change needs change needs
-          change needs change needs change needs change needs change needs
-          change
+          GDGs provide a valuable platform for developers and technologists to
+          connect, learn, and grow alongside Google's technologies and experts.
+          These groups empower innovation and growth within the tech world by
+          offering opportunities for learning, knowledge sharing, and
+          collaboration. Some GDGs focus on specialized subject areas, such as
+          applying technology to science, creating valuable communities for
+          developers with specific interests to connect and collaborate.
         </p>
 
         <div className="flex justify-center mt-8">
