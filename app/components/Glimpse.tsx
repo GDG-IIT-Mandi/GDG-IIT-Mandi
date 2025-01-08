@@ -23,7 +23,7 @@ const Glimpse = () => {
       title: "Expert Community Support",
       description: "Join the worldwide community of developers",
       image: "/assets/slide3.png",
-      link: "/support",
+      link: "https://developers.google.com/community",
     },
     {
       title: "Empowering Tools",
