@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
       setStatsVisible(true);
     }, 1500); 
     window.addEventListener('scroll', handleScroll);
-    countUp(0, 3500, 6000, setParticipants);
+    countUp(0, 1000, 6000, setParticipants);
     countUp(0, 6, 6000, setSponsors); 
 
     return () =>{ clearTimeout(timer);window.removeEventListener('scroll', handleScroll);}
