@@ -17,6 +17,7 @@ import {
 } from "firebase/storage";
 import { onAuthStateChanged } from "firebase/auth";
 import { handleSignOut } from "./GDGTeam";
+import { imageToBase64 } from "./encode";
 
 interface NewsItem {
   id: string;
@@ -62,9 +63,7 @@ const NewsAndEvents: React.FC = () => {
     if (!newHeadline || !newContent || !newImageFile) return;
 
     try {
-      const storageRef = ref(storage, `News/${newImageFile.name}`);
-      await uploadBytes(storageRef, newImageFile);
-      const imageUrl = await getDownloadURL(storageRef);
+      const imageUrl = await imageToBase64(newImageFile);
 
       const docRef = await addDoc(collection(db, "News"), {
         Headline: newHeadline,
@@ -111,9 +110,7 @@ const NewsAndEvents: React.FC = () => {
       let imageUrl = editImageURL;
 
       if (editImageFile) {
-        const storageRef = ref(storage, `News/${editImageFile.name}`);
-        await uploadBytes(storageRef, editImageFile);
-        imageUrl = await getDownloadURL(storageRef);
+        imageUrl = await imageToBase64(editImageFile);
       }
 
       const itemRef = doc(db, "News", id);

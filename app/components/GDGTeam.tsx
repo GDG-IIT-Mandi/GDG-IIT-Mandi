@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
-import { auth, db, storage } from "./firebase";
+import { auth, db } from "./firebase";
 import {
   collection,
   getDocs,
@@ -9,16 +9,10 @@ import {
   addDoc,
   deleteDoc,
 } from "firebase/firestore";
-import {
-  ref,
-  uploadBytes,
-  getDownloadURL,
-  deleteObject,
-} from "firebase/storage";
 import { onAuthStateChanged } from "firebase/auth";
 import { signInWithGoogle, logout } from "./authservice";
 import ProfileCard from "./ProfileCard";
-
+import { imageToBase64 } from "./encode";
 interface Member {
   id: string;
   Name: string;
@@ -94,9 +88,7 @@ const GDGTeam: React.FC = () => {
     if (!newName || !newImage) return;
 
     try {
-      const storageRef = ref(storage, `Members/${newImage.name}`);
-      await uploadBytes(storageRef, newImage);
-      const imageUrl = await getDownloadURL(storageRef);
+      const imageUrl = await imageToBase64(newImage);
 
       const docRef = await addDoc(collection(db, "Members"), {
         Name: newName,
@@ -155,9 +147,7 @@ const GDGTeam: React.FC = () => {
       let imageUrl = editImageURL;
 
       if (editImageFile) {
-        const storageRef = ref(storage, `Members/${editImageFile.name}`);
-        await uploadBytes(storageRef, editImageFile);
-        imageUrl = await getDownloadURL(storageRef);
+        imageUrl = await imageToBase64(editImageFile);
       }
 
       const itemRef = doc(db, "Members", id);
@@ -195,10 +185,6 @@ const GDGTeam: React.FC = () => {
     try {
       const itemRef = doc(db, "Members", id);
       await deleteDoc(itemRef);
-      const imageRef = ref(storage, imageUrl);
-      if (imageRef) {
-        await deleteObject(imageRef);
-      }
       setItems((prevItems) => prevItems.filter((item) => item.id !== id));
     } catch (error: any) {
       console.error("Error deleting member:", error);
