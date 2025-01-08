@@ -31,15 +31,16 @@ const statsData: Stat[] = [
 const Stats: React.FC = () => {
   return (
     <div className="bg-black text-white py-12 px-6">
-        <h2 className=" font-bold mb-6 text-center text-gradient">
-            <Heading className="text-4xl sm:text-2xl font-arcade ">KrackHack 2024 Statistics</Heading>
-        </h2>
+      <h2 className=" font-bold mb-6 text-center text-gradient">
+        <Heading className="text-4xl sm:text-2xl font-arcade ">
+          KrackHack 2024 Statistics
+        </Heading>
+      </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {statsData.map((stat, index) => (
           <div
             key={index}
-            className="flex flex-col items-center bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
-          >
+            className="flex flex-col items-center bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
             <div className="text-5xl mb-4">{stat.icon}</div>
             <h3 className="text-xl font-bold mb-2">{stat.title}</h3>
             <p className="text-3xl font-extrabold">{stat.value}</p>

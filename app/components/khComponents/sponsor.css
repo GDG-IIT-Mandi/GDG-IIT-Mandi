@@ -1,7 +1,7 @@
 .sponsor-marquee {
   display: flex;
-  animation: marquee 20s linear infinite;  /* Adjust the speed of scrolling */
-  white-space: nowrap;  /* Prevent wrapping */
+  animation: marquee 20s linear infinite; /* Adjust the speed of scrolling */
+  white-space: nowrap; /* Prevent wrapping */
 }
 
 .sponsor-marquee div {

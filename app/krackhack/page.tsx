@@ -1,13 +1,13 @@
 "use client";
 import React, { useEffect } from "react";
-import Hero from "./componentsSelf/Hero";
-import Sponsor from "./componentsSelf/sponsors";
-import AboutUs from "./componentsSelf/About";
-import { Gallery } from "./componentsSelf/Gallery";
-import ContactUs from "./componentsSelf/ContactUs";
-import Winners from "./componentsSelf/winners";
-import Stats from "./componentsSelf/stats";
-import { Provider } from "./components/provider";
+import Hero from "../components/khComponents/Hero";
+import Sponsor from "../components/khComponents/sponsors";
+import AboutUs from "../components/khComponents/About";
+import { Gallery } from "../components/khComponents/Gallery";
+import ContactUs from "../components/khComponents/ContactUs";
+import Winners from "../components/khComponents/winners";
+import Stats from "../components/khComponents/stats";
+import { Provider } from "../components/khComponents/provider";
 export default function KrackHack() {
   useEffect(() => {
     const elements = document.querySelectorAll(".animate-on-scroll");

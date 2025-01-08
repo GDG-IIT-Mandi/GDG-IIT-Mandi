@@ -1,7 +1,5 @@
 "use client";
-
 import React, { useState } from "react";
-
 export const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -22,17 +20,20 @@ export const Gallery: React.FC = () => {
             Gallery
           </h2>
           <div className="grid grid-cols-2 gap-5">
-            {["/galleryKH/gal1.jpeg", "/galleryKH/gal2.jpeg", "/galleryKH/gal3.jpeg", "/galleryKH/gal4.jpeg"].map(
-              (src, index) => (
-                <img
-                  key={index}
-                  src={src}
-                  alt={`2023 KrackHack Image ${index + 1}`}
-                  className="cursor-pointer rounded-md hover:scale-105 transition-transform duration-300"
-                  onClick={() => handleImageClick(src)} // Open modal on image click
-                />
-              )
-            )}
+            {[
+              "/galleryKH/gal1.jpeg",
+              "/galleryKH/gal2.jpeg",
+              "/galleryKH/gal3.jpeg",
+              "/galleryKH/gal4.jpeg",
+            ].map((src, index) => (
+              <img
+                key={index}
+                src={src}
+                alt={`2023 KrackHack Image ${index + 1}`}
+                className="cursor-pointer rounded-md hover:scale-105 transition-transform duration-300"
+                onClick={() => handleImageClick(src)} // Open modal on image click
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -41,12 +42,10 @@ export const Gallery: React.FC = () => {
       {selectedImage && (
         <div
           className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50"
-          onClick={handleModalClose}
-        >
+          onClick={handleModalClose}>
           <div
             className="relative bg-white rounded-lg  w-100 max-w-5xl shadow-lg"
-            onClick={(e) => e.stopPropagation()}
-          >
+            onClick={(e) => e.stopPropagation()}>
             {/* Close Button
             <button
               className="absolute top-2 right-2 bg-red-500 text-white rounded-full p-2 hover:bg-red-600"
