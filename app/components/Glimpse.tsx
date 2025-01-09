@@ -10,25 +10,25 @@ const Glimpse = () => {
     {
       title: "Welcome to GDG",
       description: "Discover what it means to be in GDG",
-      image: "/assets/slide1.png",
+      image: "/homeMedia/slide1.png",
       link: "https://developers.google.com/profile/u/me/dashboard",
     },
     {
       title: "Develop Innovative Softwares",
       description: "Transforming ideas into reality",
-      image: "/assets/slide2.png",
+      image: "/homeMedia/slide2.png",
       link: "https://developers.google.com/solutions/catalog",
     },
     {
       title: "Expert Community Support",
       description: "Join the worldwide community of developers",
-      image: "/assets/slide3.png",
+      image: "/homeMedia/slide3.png",
       link: "https://developers.google.com/community",
     },
     {
       title: "Empowering Tools",
       description: "Get Access to Google's SDKs for Developers like you.",
-      image: "/assets/slide4.png",
+      image: "/homeMedia/slide4.png",
       link: "https://developers.google.com/products",
     },
   ];
@@ -41,7 +41,8 @@ const Glimpse = () => {
   }, []);
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  const prevSlide = () =>
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   const goToSlide = (index: number) => setCurrentSlide(index);
 
   return (
@@ -49,8 +50,7 @@ const Glimpse = () => {
       {/* Slides */}
       <div
         className="flex transition-transform duration-500 h-full"
-        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-      >
+        style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
         {slides.map((slide, index) => (
           <Link legacyBehavior href={slide.link} key={index} passHref>
             <a className="relative flex-shrink-0 w-full h-full group">
@@ -78,14 +78,12 @@ const Glimpse = () => {
       {/* Navigation Buttons */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/30 hover:bg-white/50 rounded-full p-2 backdrop-blur-sm transition-colors"
-      >
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/30 hover:bg-white/50 rounded-full p-2 backdrop-blur-sm transition-colors">
         <ChevronLeft className="w-6 h-6 text-white" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/30 hover:bg-white/50 rounded-full p-2 backdrop-blur-sm transition-colors"
-      >
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/30 hover:bg-white/50 rounded-full p-2 backdrop-blur-sm transition-colors">
         <ChevronRight className="w-6 h-6 text-white" />
       </button>
 
