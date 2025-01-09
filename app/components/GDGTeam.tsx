@@ -221,7 +221,7 @@ const GDGTeam: React.FC = () => {
     };
   }, []);
 
-  const groupedMembers = items.reduce(
+  const tempGroupedMembers = items.reduce(
     (acc: Record<string, Member[]>, member) => {
       const { SubTeam } = member;
       if (!acc[SubTeam]) {
@@ -232,6 +232,34 @@ const GDGTeam: React.FC = () => {
     },
     {}
   );
+
+  const groupedMembers = (tempGroupedMembers: Record<string, Member[]>) => {
+    const subTeamPriorities: { [key: string]: number } = {
+      "Club Coordinator": 1,
+      "Co-coordinator": 3,
+      "Technical Team": 4,
+      "Management Team": 5,
+      "Design Team": 6,
+      "Publicity Team": 7,
+      "Mentorship Team": 8,
+    };
+
+    const sortedGroupedMembers = Object.entries(tempGroupedMembers)
+      .sort(([teamA], [teamB]) => {
+        const priorityA = subTeamPriorities[teamA.trim()] || Number.MAX_VALUE;
+        const priorityB = subTeamPriorities[teamB.trim()] || Number.MAX_VALUE;
+        return priorityA - priorityB;
+      })
+      .reduce((acc: Record<string, Member[]>, [subTeam, members]) => {
+        acc[subTeam] = members;
+        return acc;
+      }, {});
+
+    return sortedGroupedMembers;
+  };
+
+  const sortedGrouped = groupedMembers(tempGroupedMembers);
+
   const getColoredSubTeamChars = (subTeam: string) => {
     const headColors = ["#DB4437", "#0F9D58", "#4285F4", "#F4B400"];
     const chars = subTeam.split("");
@@ -242,7 +270,9 @@ const GDGTeam: React.FC = () => {
     return (
       <div className="flex justify-center gap-1">
         {chars.map((char, index) => {
+          // Determine which color section this character belongs to
           const colorIndex = Math.floor(index / charsPerSection);
+          // Use modulo to ensure we don't exceed our color array bounds
           const color = headColors[colorIndex % headColors.length];
 
           return (
@@ -260,7 +290,7 @@ const GDGTeam: React.FC = () => {
 
   return (
     <div className="p-2">
-      {Object.entries(groupedMembers).map(([subTeam, members]) => (
+      {Object.entries(sortedGrouped).map(([subTeam, members]) => (
         <div key={subTeam} className="mb-12">
           {getColoredSubTeamChars(subTeam)}
           <div
@@ -273,7 +303,7 @@ const GDGTeam: React.FC = () => {
               WebkitOverflowScrolling: "touch",
             }}>
             <div className="flex gap-6 text-gray-950">
-              {members.map((member) => (
+              {members.map((member: Member) => (
                 <div key={member.id} className="w-72 flex-shrink-0 mx-3">
                   {editing === member.id ? (
                     <div className="space-y-4">

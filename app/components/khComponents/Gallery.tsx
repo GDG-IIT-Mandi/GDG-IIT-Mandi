@@ -14,7 +14,7 @@ const Gallery: React.FC = () => {
 
   return (
     <div id="gallery2023" className="animate-on-scroll">
-      <div className="relative bg-black text-white py-20 px-5 md:px-10 lg:px-20 overflow-hidden">
+      <div className="relative bg-black text-white py-10 px-5 md:px-10 lg:px-20 overflow-hidden">
         <div className="absolute inset-0 animate-bg-move opacity-30 z-0"></div>
         <div className="relative z-10 max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-500 font-arcade">

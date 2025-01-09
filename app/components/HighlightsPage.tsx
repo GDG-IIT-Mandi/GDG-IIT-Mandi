@@ -164,7 +164,7 @@ const NewsAndEvents: React.FC = () => {
     <div>
       <section className="flex flex-col lg:flex-row gap-10 p-3 text-gray-900">
         <div className="flex-1 min-w-[200px]">
-          <h3 className="text-2xl mb-6 text-blue-600 text-center font-bold">
+          <h3 className="text-3xl mb-6 text-blue-600 text-center font-bold">
             <span className="text-red-600">E</span>
             <span className="text-green-600">v</span>
             <span className="text-green-600">e</span>
@@ -176,9 +176,14 @@ const NewsAndEvents: React.FC = () => {
             {eventItems.map((event) => (
               <li
                 key={event.id}
-                className="flex items-center gap-4 mb-8 bg-gray-200 rounded-lg p-6 shadow-md text-gray-900">
-                <div className="flex-1">
-                  <h3 className="mb-4 text-xl text-blue-600">
+                className="mb-8 bg-gray-200 rounded-lg p-6 shadow-md text-gray-900">
+                <div className="relative max-[620px]:flex flex-col justify-center items-center">
+                  <img
+                    src={event.Image}
+                    alt="event image"
+                    className="float-right ml-4 mb-4 w-48 h-48 object-fill rounded-lg min-w-[20px] min-h-[20px] "
+                  />
+                  <h3 className="mb-4 text-xl text-blue-600 font-bold">
                     {event.Headline}
                   </h3>
                   {editing === event.id ? (
@@ -241,18 +246,13 @@ const NewsAndEvents: React.FC = () => {
                     </>
                   )}
                 </div>
-                <img
-                  src={event.Image}
-                  alt="event image"
-                  className="w-48 h-48 object-fill rounded-lg min-w-[20px] min-h-[20px]"
-                />
               </li>
             ))}
           </ul>
         </div>
 
         <div className="flex-1 min-w-[300px]">
-          <h3 className="text-2xl mb-6 text-blue-600 text-center font-bold">
+          <h3 className="text-3xl mb-6 text-blue-600 text-center font-bold">
             <span className="text-red-600">N</span>
             <span className="text-green-600">e</span>
             <span className="text-green-600">w</span>
@@ -262,9 +262,14 @@ const NewsAndEvents: React.FC = () => {
             {newsItems.map((news) => (
               <li
                 key={news.id}
-                className="flex items-center gap-4 mb-8 bg-gray-200 rounded-lg p-6 shadow-md text-gray-900">
-                <div className="flex-1">
-                  <h3 className="mb-4 text-xl text-blue-600">
+                className="mb-8 bg-gray-200 rounded-lg p-6 shadow-md text-gray-900">
+                <div className="relative max-[620px]:flex flex-col justify-center items-center">
+                  <img
+                    src={news.Image}
+                    alt="news image"
+                    className="float-right ml-4 mb-4 w-48 h-48 object-fill rounded-lg min-w-[20px] min-h-[20px]"
+                  />
+                  <h3 className="mb-4 text-xl text-blue-600 font-bold">
                     {news.Headline}
                   </h3>
                   {editing === news.id ? (
@@ -327,11 +332,6 @@ const NewsAndEvents: React.FC = () => {
                     </>
                   )}
                 </div>
-                <img
-                  src={news.Image}
-                  alt="event image"
-                  className="w-48 h-48 object-fill rounded-lg min-w-[20px] min-h-[20px]"
-                />
               </li>
             ))}
           </ul>

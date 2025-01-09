@@ -1,12 +1,17 @@
+.sponsor-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
 .sponsor-marquee {
   display: flex;
-  animation: marquee 20s linear infinite; /* Adjust the speed of scrolling */
-  white-space: nowrap; /* Prevent wrapping */
+  gap: 32px;
+  animation: marquee 20s linear infinite;
 }
 
 .sponsor-marquee div {
+  flex-shrink: 0; /* Prevent logos from shrinking */
   display: inline-block;
-  margin-right: 32px; /* Adjust spacing between logos */
 }
 
 .sponsor-marquee img {
@@ -32,10 +37,10 @@
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(100%);
+  from {
+    transform: translateX(100%); /* Start outside the viewport */
   }
-  100% {
-    transform: translateX(-100%);
+  to {
+    transform: translateX(-100%); /* Move fully out of the viewport */
   }
 }

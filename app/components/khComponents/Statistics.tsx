@@ -30,7 +30,7 @@ const statsData: Stat[] = [
 
 const Stats: React.FC = () => {
   return (
-    <div className="bg-black text-white py-12 px-6">
+    <div className="bg-black text-white py-10 px-6">
       <h2 className=" font-bold mb-6 text-center text-gradient">
         <Heading className="text-4xl sm:text-2xl font-arcade ">
           KrackHack 2024 Statistics

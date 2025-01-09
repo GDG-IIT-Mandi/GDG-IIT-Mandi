@@ -12,7 +12,7 @@ const SubmissionStats: any = [
 const Winners: React.FC = () => {
   return (
     <section
-      className="relative bg-black text-white py-20 px-5 md:px-10 lg:px-20 overflow-hidden animate-on-scroll"
+      className="relative bg-black text-white py-10 px-5 md:px-10 lg:px-20 overflow-hidden animate-on-scroll"
       id="aboutUsSection">
       <div className="absolute inset-0 animate-bg-move opacity-30 z-0"></div>
 
