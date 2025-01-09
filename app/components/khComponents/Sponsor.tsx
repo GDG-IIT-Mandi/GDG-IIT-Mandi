@@ -44,7 +44,6 @@ const SponsorMarquee = () => {
       <div className="overflow-hidden">
         <div className="sponsor-marquee flex animate-scroll">
           {renderSponsors()}
-          {renderSponsors()}
         </div>
       </div>
 

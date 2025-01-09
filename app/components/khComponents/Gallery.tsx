@@ -22,10 +22,10 @@ const Gallery: React.FC = () => {
           </h2>
           <div className="grid grid-cols-2 gap-5">
             {[
-              "/galleryKH/gal1.jpeg",
-              "/galleryKH/gal2.jpeg",
-              "/galleryKH/gal3.jpeg",
-              "/galleryKH/gal4.jpeg",
+              "/galleryKH/gal1.webp",
+              "/galleryKH/gal2.webp",
+              "/galleryKH/gal3.webp",
+              "/galleryKH/gal4.webp",
             ].map((src, index) => (
               <img
                 key={index}

@@ -15,7 +15,7 @@ const HorizontalScrollBackground: React.FC = () => {
     });
   }, [scrollY]);
 
-  const divArray = Array.from({ length: 10 });
+  const divArray = Array.from({ length: 1 });
 
   return (
     <div className="fixed top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
@@ -30,15 +30,106 @@ const HorizontalScrollBackground: React.FC = () => {
             key={index}
             className="rounded-md flex justify-center items-center"
             style={{
-              minWidth: "180px",
-              minHeight: "80px",
-              margin: "0 15px",
+              minWidth: "100px",
+              minHeight: "100px",
+              margin: "0",
               overflow: "hidden",
             }}>
             <Image
-              src="/symbol.webp"
-              alt="Google Developer Student Clubs Logo"
-              width={180}
+              src="/homeMedia/chrome.webp"
+              alt="Google"
+              width={100}
+              height={100}
+              className="w-full h-full object-cover"
+            />
+            <Image
+              src="/homeMedia/cloud.webp"
+              alt="Google"
+              width={100}
+              height={100}
+              className="w-full h-full object-cover"
+            />
+            <Image
+              src="/homeMedia/drive.webp"
+              alt="Google"
+              width={100}
+              height={100}
+              className="w-full h-full object-cover"
+            />
+            <Image
+              src="/homeMedia/firebase.webp"
+              alt="Google"
+              width={100}
+              height={100}
+              className="w-full h-full object-cover"
+            />
+            <Image
+              src="/homeMedia/go.webp"
+              alt="Google"
+              width={100}
+              height={100}
+              className="w-full h-full object-cover"
+            />
+            <Image
+              src="/homeMedia/google.webp"
+              alt="Google"
+              width={100}
+              height={100}
+              className="w-full h-full object-cover"
+            />
+            <Image
+              src="/homeMedia/lens.webp"
+              alt="Google"
+              width={100}
+              height={100}
+              className="w-full h-full object-cover"
+            />
+            <Image
+              src="/homeMedia/mail.webp"
+              alt="Google"
+              width={100}
+              height={100}
+              className="w-full h-full object-cover"
+            />
+            <Image
+              src="/homeMedia/maps.webp"
+              alt="Google"
+              width={100}
+              height={100}
+              className="w-full h-full object-cover"
+            />
+            <Image
+              src="/homeMedia/meet.webp"
+              alt="Google"
+              width={100}
+              height={100}
+              className="w-full h-full object-cover"
+            />
+            <Image
+              src="/homeMedia/play.webp"
+              alt="Google"
+              width={100}
+              height={100}
+              className="w-full h-full object-cover"
+            />
+            <Image
+              src="/homeMedia/tf.webp"
+              alt="Google"
+              width={100}
+              height={100}
+              className="w-full h-full object-cover"
+            />
+            <Image
+              src="/homeMedia/watch.webp"
+              alt="Google"
+              width={100}
+              height={100}
+              className="w-full h-full object-cover"
+            />
+            <Image
+              src="/homeMedia/yt.webp"
+              alt="Google"
+              width={100}
               height={100}
               className="w-full h-full object-cover"
             />

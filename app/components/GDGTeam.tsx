@@ -242,9 +242,7 @@ const GDGTeam: React.FC = () => {
     return (
       <div className="flex justify-center gap-1">
         {chars.map((char, index) => {
-          // Determine which color section this character belongs to
           const colorIndex = Math.floor(index / charsPerSection);
-          // Use modulo to ensure we don't exceed our color array bounds
           const color = headColors[colorIndex % headColors.length];
 
           return (
