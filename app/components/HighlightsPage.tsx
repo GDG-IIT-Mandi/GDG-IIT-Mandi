@@ -19,6 +19,7 @@ interface NewsItem {
   Content: string;
   Image: string;
   News: boolean;
+  Date: string;
 }
 
 const NewsAndEvents: React.FC = () => {
@@ -36,13 +37,27 @@ const NewsAndEvents: React.FC = () => {
 
   useEffect(() => {
     const fetchItems = async () => {
-      const querySnapshot = await getDocs(collection(db, "News"));
-      const data = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      })) as NewsItem[];
-      setItems(data);
+      try {
+        const querySnapshot = await getDocs(collection(db, "News"));
+        const data = querySnapshot.docs.map((doc) => {
+          const docData = doc.data();
+          return {
+            id: doc.id,
+            ...docData,
+            Date: docData.Date?.toDate
+              ? docData.Date.toDate()
+              : new Date(docData.Date),
+          };
+        });
+
+        // Sort by descending date
+        data.sort((a, b) => b.Date.getTime() - a.Date.getTime());
+        setItems(data as NewsItem[]);
+      } catch (error) {
+        console.error("Error fetching news items:", error);
+      }
     };
+
     fetchItems();
   }, []);
 
@@ -64,17 +79,19 @@ const NewsAndEvents: React.FC = () => {
         Content: newContent,
         Image: imageUrl,
         News: newNews,
+        Date: new Date().toISOString(),
       });
 
       setItems((prevItems) => [
-        ...prevItems,
         {
           id: docRef.id,
           Headline: newHeadline,
           Content: newContent,
           Image: imageUrl,
           News: newNews,
+          Date: new Date().toISOString(),
         },
+        ...prevItems,
       ]);
 
       setNewHeadline("");
