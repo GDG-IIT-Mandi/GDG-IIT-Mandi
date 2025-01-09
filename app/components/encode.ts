@@ -1,4 +1,3 @@
-// Add this function to compress images before converting to base64
 function compressImage(file: File): Promise<File> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -35,7 +34,7 @@ function compressImage(file: File): Promise<File> {
             if (blob) {
               resolve(
                 new File([blob], file.name, {
-                  type: "image/jpeg",
+                  type: "image/webp",
                   lastModified: Date.now(),
                 })
               );
@@ -43,8 +42,8 @@ function compressImage(file: File): Promise<File> {
               reject(new Error("Canvas to Blob conversion failed"));
             }
           },
-          "image/jpeg",
-          0.7
+          "image/webp",
+          0.8
         );
       };
     };

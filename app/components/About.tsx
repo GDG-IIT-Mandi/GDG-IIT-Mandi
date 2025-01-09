@@ -32,9 +32,9 @@ const AboutUs: React.FC = () => {
 
         <div className="flex justify-center mt-8">
           <Link
-            href="/Highlights"
+            href="mailto:gdgiitmandi@gmail.com"
             className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-black font-semibold py-2 px-6 rounded-md transition-transform transform hover:scale-105">
-            Explore Our Events
+            Get In Touch
           </Link>
         </div>
       </div>

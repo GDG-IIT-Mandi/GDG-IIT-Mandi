@@ -7,7 +7,7 @@ import { Gallery } from "../components/khComponents/Gallery";
 import ContactUs from "../components/khComponents/ContactUs";
 import Winners from "../components/khComponents/winners";
 import Stats from "../components/khComponents/stats";
-import { Provider } from "../components/khComponents/provider";
+import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
 export default function KrackHack() {
   useEffect(() => {
     const elements = document.querySelectorAll(".animate-on-scroll");
@@ -28,7 +28,7 @@ export default function KrackHack() {
   }, []);
   return (
     <main>
-      <Provider>
+      <ChakraProvider value={defaultSystem}>
         <Hero></Hero>
         <AboutUs></AboutUs>
         <Stats></Stats>
@@ -36,7 +36,7 @@ export default function KrackHack() {
         <Gallery></Gallery>
         <Sponsor></Sponsor>
         <ContactUs></ContactUs>
-      </Provider>
+      </ChakraProvider>
     </main>
   );
 }

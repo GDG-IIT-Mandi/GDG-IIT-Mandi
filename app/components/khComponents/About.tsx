@@ -12,16 +12,16 @@ const AboutUs: React.FC = () => {
         </h2>
 
         <p className="text-lg md:text-xl text-center leading-relaxed mb-8 text-gray-300">
-          KrackHack is a 48-hour hybrid hackathon in Even Semester, open to
-          students passionate about using technology for real-world
-          problem-solving. The event spans proposal submission, development, and
-          presentation stages. Teams submit proposals online, and the top 15
-          proceed to develop working prototypes within the 48-hour timeframe.
-          The final stage involves presenting ideas and prototypes, with a panel
-          judging and selecting the most innovative solutions. This is an
-          internal hackathon, the top team will then get a chance to participate
-          in “Bit and Build'25 “, a pan india competition organized by GDSC
-          CRCE.
+          Welcome to KrackHack, a premier 48-hour hybrid hackathon designed to
+          ignite innovation and empower students to tackle real-world challenges
+          through technology. This dynamic event unfolds in the Even Semester,
+          bringing together bright minds to ideate, develop, and present
+          transformative solutions. With stages ranging from proposal submission
+          to prototype development and final presentations, KrackHack offers a
+          comprehensive platform for creativity and problem-solving. The top
+          team earns the honor of representing their institution at “Bit and
+          Build'25”, a prestigious pan-India competition by GDSC CRCE. Join us
+          in shaping the future, one breakthrough at a time.
         </p>
 
         <div className="flex justify-center mt-8">

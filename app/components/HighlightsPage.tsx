@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { auth, db, storage } from "./firebase";
+import { auth, db } from "./firebase";
 import {
   collection,
   getDocs,
@@ -9,12 +9,6 @@ import {
   addDoc,
   deleteDoc,
 } from "firebase/firestore";
-import {
-  ref,
-  uploadBytes,
-  getDownloadURL,
-  deleteObject,
-} from "firebase/storage";
 import { onAuthStateChanged } from "firebase/auth";
 import { handleSignOut } from "./GDGTeam";
 import { imageToBase64 } from "./encode";
@@ -140,12 +134,6 @@ const NewsAndEvents: React.FC = () => {
 
   const handleDelete = async (id: string, imageUrl: string) => {
     try {
-      await deleteDoc(doc(db, "News", id));
-      const imageRef = ref(storage, imageUrl);
-      if (imageRef) {
-        await deleteObject(imageRef);
-      }
-
       setItems((prevItems) => prevItems.filter((item) => item.id !== id));
     } catch (error: any) {
       console.error("Error deleting document or image:", error);

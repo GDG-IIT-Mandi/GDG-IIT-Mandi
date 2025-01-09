@@ -21,39 +21,39 @@ const Footer = () => {
         <div className="text-center">
           <div className="flex justify-center gap-6 mb-4">
             <a
-              href="https://www.facebook.com/"
+              href="https://gdg.community.dev/gdg-on-campus-indian-institute-of-technology-mandi-india/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-200 text-2xl transition-transform duration-300 hover:text-[#1877f2] hover:scale-110">
-              <i className="fab fa-facebook-f"></i>
+              className="text-white-200 text-2xl transition-transform duration-300 hover:text-gray-50 hover:scale-110">
+              <i className="fa-brands fa-google"></i>
             </a>
             <a
-              href="https://github.com/"
+              href="https://github.com/GDG-IIT-Mandi"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-200 text-2xl transition-transform duration-300 hover:text-gray-800 hover:scale-110">
               <i className="fab fa-github"></i>
             </a>
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/gdg_iitmandi/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-200 text-2xl transition-transform duration-300 hover:text-[#e1306c] hover:scale-110">
               <i className="fab fa-instagram"></i>
             </a>
             <a
-              href="https://www.youtube.com/"
+              href="https://www.linkedin.com/company/google-developer-groups-iit-mandi"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-200 text-2xl transition-transform duration-300 hover:text-red-600 hover:scale-110">
-              <i className="fab fa-youtube"></i>
+              className="text-gray-200 text-2xl transition-transform duration-300 hover:text-[#0077b5] hover:scale-110">
+              <i className="fa-brands fa-linkedin"></i>
             </a>
             <a
-              href="https://x.com/"
+              href="mailto:gdgiitmandi@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-200 text-2xl transition-transform duration-300 hover:text-[#1da1f2] hover:scale-110">
-              <i className="fab fa-twitter"></i>
+              <i className="fa-solid fa-envelope"></i>
             </a>
           </div>
           <p className="text-sm text-white">
