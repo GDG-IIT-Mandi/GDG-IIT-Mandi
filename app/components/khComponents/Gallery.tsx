@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
-export const Gallery: React.FC = () => {
+
+const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const handleImageClick = (src: string) => {
@@ -64,3 +65,5 @@ export const Gallery: React.FC = () => {
     </div>
   );
 };
+
+export default Gallery;

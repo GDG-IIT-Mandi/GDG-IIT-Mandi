@@ -2,7 +2,7 @@ import React from "react";
 // import Image from 'next/image';
 import { Image } from "@chakra-ui/react";
 import Link from "next/link";
-import "./sponsor.css";
+import "./Sponsor.css";
 
 const sponsors = [
   { src: "/assets/celo.webp", link: "https://celo.org/" },

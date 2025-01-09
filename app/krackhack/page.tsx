@@ -1,12 +1,12 @@
 "use client";
 import React, { useEffect } from "react";
 import Hero from "../components/khComponents/Hero";
-import Sponsor from "../components/khComponents/sponsors";
+import Sponsor from "../components/khComponents/Sponsor";
 import AboutUs from "../components/khComponents/About";
-import { Gallery } from "../components/khComponents/Gallery";
+import Gallery from "../components/khComponents/Gallery";
 import ContactUs from "../components/khComponents/ContactUs";
-import Winners from "../components/khComponents/winners";
-import Stats from "../components/khComponents/stats";
+import Winners from "../components/khComponents/Winner";
+import Stats from "../components/khComponents/Statistics";
 import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
 export default function KrackHack() {
   useEffect(() => {
