@@ -10,7 +10,7 @@ interface Stat {
 const statsData: Stat[] = [
   {
     title: "Projects Completed",
-    value: "25+",
+    value: "50+",
     description: "Successfully delivered projects",
     icon: <i className="fas fa-check-circle text-blue-500"></i>,
   },
