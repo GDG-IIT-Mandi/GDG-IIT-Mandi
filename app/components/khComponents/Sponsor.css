@@ -1,46 +1,23 @@
-.sponsor-container {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-}
-.sponsor-marquee {
-  display: flex;
-  gap: 32px;
-  animation: marquee 20s linear infinite;
+.sponsor-track {
+  animation: scroll 20s linear infinite;
+  width: fit-content;
 }
 
-.sponsor-marquee div {
-  flex-shrink: 0; /* Prevent logos from shrinking */
-  display: inline-block;
-}
-
-.sponsor-marquee img {
-  filter: grayscale(100%);
-  transition: filter 0.3s ease-in-out;
-}
-
-.sponsor-marquee img:hover {
-  filter: grayscale(0);
-}
-
-.sponsor-marquee a {
-  display: inline-block;
-}
-
-.sponsor-marquee .transition-transform {
-  transform: scale(1);
-  transition: transform 0.3s ease-in-out;
-}
-
-.sponsor-marquee .transition-transform:hover {
-  transform: scale(1.1);
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(100%); /* Start outside the viewport */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
-  to {
-    transform: translateX(-100%); /* Move fully out of the viewport */
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.sponsor-track:hover {
+  animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+  .sponsor-track {
+    animation-duration: 10s;
   }
 }
