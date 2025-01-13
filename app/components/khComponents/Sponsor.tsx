@@ -1,5 +1,4 @@
 import React from "react";
-import "./sponsor.css";
 const Sponsor = () => {
   const sponsors = [
     { src: "/khMedia/celo.webp", link: "https://celo.org/" },
@@ -52,6 +51,31 @@ const Sponsor = () => {
           ))}
         </div>
       </div>
+      <style jsx>{`
+        .sponsor-track {
+          animation: scroll 20s linear infinite;
+          width: fit-content;
+        }
+
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .sponsor-track:hover {
+          animation-play-state: paused;
+        }
+
+        @media (max-width: 768px) {
+          .sponsor-track {
+            animation-duration: 10s;
+          }
+        }
+      `}</style>
     </div>
   );
 };
