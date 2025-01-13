@@ -62,8 +62,8 @@ const Hero: React.FC = () => {
       <div id="homepage-background"></div>
 
       <motion.div
-        className="absolute left-[40%] w-12 h-12 rounded-md sm:block hidden"
-        initial={{ x: 0 }}
+        className="absolute left-[40%] w-12 h-12 rounded-md "
+        initial={{ x: -10 }}
         animate={{ x: -150, y: ["0", "-10px", "0px"] }}
         transition={{
           x: { duration: 1, ease: "easeOut" },
@@ -78,8 +78,8 @@ const Hero: React.FC = () => {
         />
       </motion.div>
       <motion.div
-        className="absolute right-[40%] w-12 h-12 rounded-md sm:block hidden"
-        initial={{ x: 0 }}
+        className="absolute right-[40%] w-12 h-12 rounded-md "
+        initial={{ x: 10 }}
         animate={{ x: 150, y: ["0", "-10px", "0px"] }}
         transition={{
           x: { duration: 1, ease: "easeOut" },
@@ -103,24 +103,24 @@ const Hero: React.FC = () => {
       />
 
       {showSubtitle && (
-        <Link href="#">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0 }}
-            className="mt-5 flex flex-col items-center text-xl text-white justify-center ">
-            <p className="text-xl text-gray-300 mt-4 font-medium">
-              Fueling innovation since 2022: Where ideas ignite and dreams take
-              flight!
-            </p>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0 }}
+          className="mt-5 flex flex-col items-center text-xl text-white justify-center ">
+          <p className="text-xl text-gray-300 mt-4 font-medium">
+            Fueling innovation since 2022: Where ideas ignite and dreams take
+            flight!
+          </p>
+          <Link href="#" target="_blank">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="mt-6 px-6 py-3 rounded-full bg-[#a268ff] text-white font-semibold flex items-center justify-center gap-2 shadow-lg transition-all duration-200 hover:bg-[#357ae8] sparkle-button">
-              Registrations open soon
+              Register Now
             </motion.button>
-          </motion.div>
-        </Link>
+          </Link>
+        </motion.div>
       )}
 
       {statsVisible && (

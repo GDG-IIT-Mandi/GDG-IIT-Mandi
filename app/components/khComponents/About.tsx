@@ -7,7 +7,7 @@ const AboutUs: React.FC = () => {
       <div className="absolute inset-0 animate-bg-move opacity-30 z-0"></div>
 
       <div className="relative z-10 max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold mb-6 text-center text-gradient font-arcade">
+        <h2 className="sm:text-3xl md:text-4xl font-bold mb-6 text-center text-gradient font-arcade">
           What is KrackHack?
         </h2>
 
