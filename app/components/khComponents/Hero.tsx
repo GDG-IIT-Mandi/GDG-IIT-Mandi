@@ -108,13 +108,11 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0 }}
           className="mt-5 flex flex-col items-center text-xl text-white justify-center ">
-          <p className="text-xl text-gray-300 mt-4 font-medium">
+          <p className="text-xl text-gray-300 mt-4 font-medium text-center">
             Fueling innovation since 2022: Where ideas ignite and dreams take
             flight!
           </p>
-          <Link
-            href="https://guide.devfolio.co/organizers/apply-with-devfolio-integration"
-            target="_blank">
+          <Link href="https://guide.devfolio.co/organizers/apply-with-devfolio-integration" target="_blank">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -146,9 +144,10 @@ const Hero: React.FC = () => {
         </motion.div>
       )}
 
-      <div className="pb-[20vh]" />
+      <div className="pb-[5vh]" />
     </div>
   );
 };
 
 export default Hero;
+
