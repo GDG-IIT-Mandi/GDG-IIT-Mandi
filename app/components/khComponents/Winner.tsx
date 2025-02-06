@@ -18,7 +18,7 @@ const Winners: React.FC = () => {
 
       <div className="relative z-10 max-w-4xl mx-auto">
         <h2 className=" font-bold mb-6 text-center text-gradient">
-          <Heading className="font-arcade sm:text-2xl text-4xl">
+          <Heading className="font-arcade sm:text-2xl text-3xl">
             KrackHack 2024 Winners
           </Heading>
         </h2>

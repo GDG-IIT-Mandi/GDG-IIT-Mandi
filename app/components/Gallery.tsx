@@ -15,123 +15,41 @@ const HorizontalScrollBackground: React.FC = () => {
     });
   }, [scrollY]);
 
-  const divArray = Array.from({ length: 1 });
+  const images = [
+    "chrome",
+    "cloud",
+    "drive",
+    "firebase",
+    "go",
+    "google",
+    "lens",
+    "mail",
+    "maps",
+    "meet",
+    "play",
+    "tf",
+    "watch",
+    "yt",
+  ];
 
   return (
     <div className="fixed top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
       <motion.div
-        className="absolute top-1/2 flex space-x-4"
+        className="absolute top-1/2 flex flex-nowrap whitespace-nowrap px-4"
         style={{
           transform: `translateX(${horizontalOffset}px) translateY(-50%)`,
           opacity: opacity,
         }}>
-        {divArray.map((_, index) => (
+        {images.map((img, index) => (
           <div
             key={index}
-            className="rounded-md flex justify-center items-center"
-            style={{
-              minWidth: "100px",
-              minHeight: "100px",
-              margin: "0",
-              overflow: "hidden",
-            }}>
+            className="min-w-[80px] sm:min-w-[100px] h-auto mx-2">
             <Image
-              src="/homeMedia/chrome.webp"
-              alt="Google"
+              src={`/homeMedia/${img}.webp`}
+              alt={img}
               width={100}
               height={100}
-              className="w-full h-full object-cover"
-            />
-            <Image
-              src="/homeMedia/cloud.webp"
-              alt="Google"
-              width={100}
-              height={100}
-              className="w-full h-full object-cover"
-            />
-            <Image
-              src="/homeMedia/drive.webp"
-              alt="Google"
-              width={100}
-              height={100}
-              className="w-full h-full object-cover"
-            />
-            <Image
-              src="/homeMedia/firebase.webp"
-              alt="Google"
-              width={100}
-              height={100}
-              className="w-full h-full object-cover"
-            />
-            <Image
-              src="/homeMedia/go.webp"
-              alt="Google"
-              width={100}
-              height={100}
-              className="w-full h-full object-cover"
-            />
-            <Image
-              src="/homeMedia/google.webp"
-              alt="Google"
-              width={100}
-              height={100}
-              className="w-full h-full object-cover"
-            />
-            <Image
-              src="/homeMedia/lens.webp"
-              alt="Google"
-              width={100}
-              height={100}
-              className="w-full h-full object-cover"
-            />
-            <Image
-              src="/homeMedia/mail.webp"
-              alt="Google"
-              width={100}
-              height={100}
-              className="w-full h-full object-cover"
-            />
-            <Image
-              src="/homeMedia/maps.webp"
-              alt="Google"
-              width={100}
-              height={100}
-              className="w-full h-full object-cover"
-            />
-            <Image
-              src="/homeMedia/meet.webp"
-              alt="Google"
-              width={100}
-              height={100}
-              className="w-full h-full object-cover"
-            />
-            <Image
-              src="/homeMedia/play.webp"
-              alt="Google"
-              width={100}
-              height={100}
-              className="w-full h-full object-cover"
-            />
-            <Image
-              src="/homeMedia/tf.webp"
-              alt="Google"
-              width={100}
-              height={100}
-              className="w-full h-full object-cover"
-            />
-            <Image
-              src="/homeMedia/watch.webp"
-              alt="Google"
-              width={100}
-              height={100}
-              className="w-full h-full object-cover"
-            />
-            <Image
-              src="/homeMedia/yt.webp"
-              alt="Google"
-              width={100}
-              height={100}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </div>
         ))}
