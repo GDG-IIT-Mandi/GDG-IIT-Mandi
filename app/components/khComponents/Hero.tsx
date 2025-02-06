@@ -39,6 +39,17 @@ const Hero: React.FC = () => {
   };
 
   useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://apply.devfolio.co/v2/sdk.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  useEffect(() => {
     const timer = setTimeout(() => {
       setStatsVisible(true);
     }, 1500);
@@ -112,13 +123,19 @@ const Hero: React.FC = () => {
             Fueling innovation since 2022: Where ideas ignite and dreams take
             flight!
           </p>
-          <Link href="https://guide.devfolio.co/organizers/apply-with-devfolio-integration" target="_blank">
+          <Link href="/" target="_blank">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="mt-6 px-6 py-3 rounded-full bg-[#a268ff] text-white font-semibold flex items-center justify-center gap-2 shadow-lg transition-all duration-200 hover:bg-[#357ae8] sparkle-button">
               Register Now
             </motion.button>
+            {/* <div 
+	class="apply-button" 
+	data-hackathon-slug="YOUR-HACKATHON-SLUG" 
+	data-button-theme="light"
+	style="height: 44px; width: 312px"
+></div> */}
           </Link>
         </motion.div>
       )}
@@ -150,4 +167,3 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
-
