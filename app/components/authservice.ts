@@ -20,6 +20,7 @@
 //     throw new Error(error.message);
 //   }
 // };
+
 //code to allow only one gmail to change the db
 
 import { auth } from "./firebase";
