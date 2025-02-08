@@ -39,17 +39,6 @@ const Hero: React.FC = () => {
   };
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://apply.devfolio.co/v2/sdk.js";
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
-  useEffect(() => {
     const timer = setTimeout(() => {
       setStatsVisible(true);
     }, 1500);
@@ -123,7 +112,7 @@ const Hero: React.FC = () => {
             Fueling innovation since 2022: Where ideas ignite and dreams take
             flight!
           </p>
-          <Link href="/" target="_blank">
+          <Link href="https://krackhack-2.devfolio.co/" target="_blank">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -131,12 +120,6 @@ const Hero: React.FC = () => {
               Register Now
             </motion.button>
           </Link>
-		<div 
-	class="apply-button" 
-	data-hackathon-slug="krackhack-2" 
-	data-button-theme="light"
-	style="height: 44px; width: 312px"
-></div>
         </motion.div>
       )}
 
