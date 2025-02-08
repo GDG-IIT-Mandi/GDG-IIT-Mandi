@@ -123,7 +123,7 @@ const Hero: React.FC = () => {
             Fueling innovation since 2022: Where ideas ignite and dreams take
             flight!
           </p>
-          <Link href="/" target="_blank">
+          <Link href="https://krackhack-2.devfolio.co/" target="_blank">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
