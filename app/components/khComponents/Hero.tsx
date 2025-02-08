@@ -130,13 +130,13 @@ const Hero: React.FC = () => {
               className="mt-6 px-6 py-3 rounded-full bg-[#a268ff] text-white font-semibold flex items-center justify-center gap-2 shadow-lg transition-all duration-200 hover:bg-[#357ae8] sparkle-button">
               Register Now
             </motion.button>
-            {/* <div 
+          </Link>
+		<div 
 	class="apply-button" 
-	data-hackathon-slug="YOUR-HACKATHON-SLUG" 
+	data-hackathon-slug="krackhack-2" 
 	data-button-theme="light"
 	style="height: 44px; width: 312px"
-></div> */}
-          </Link>
+></div>
         </motion.div>
       )}
 
