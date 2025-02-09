@@ -16,34 +16,8 @@ const Hero: React.FC = () => {
     seconds: 0,
   });
 
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
-
   const [participants, setParticipants] = useState(0);
   const [sponsors, setSponsors] = useState(0);
-
-  const eventStart = "Feb 22";
-  const eventEnd = "Feb 23";
-  const eventYear = "2025";
-  const registrationDeadline = new Date("2025-02-21T23:59:59");
-
-  const calculateTimeLeft = () => {
-    const difference = registrationDeadline.getTime() - new Date().getTime();
-
-    if (difference > 0) {
-      setTimeLeft({
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
-      });
-    }
-  };
-
 
   const eventStart = "Feb 22";
   const eventEnd = "Feb 23";
@@ -66,7 +40,6 @@ const Hero: React.FC = () => {
   const handleScroll = () => {
     setScrollY(window.scrollY);
   };
-
 
   const countUp = (
     start: number,
@@ -98,10 +71,6 @@ const Hero: React.FC = () => {
     calculateTimeLeft();
     const countdownTimer = setInterval(calculateTimeLeft, 1000);
 
-
-    calculateTimeLeft();
-    const countdownTimer = setInterval(calculateTimeLeft, 1000);
-
     window.addEventListener("scroll", handleScroll);
     countUp(0, 1000, 6000, setParticipants);
     countUp(0, 6, 6000, setSponsors);
@@ -109,11 +78,9 @@ const Hero: React.FC = () => {
     return () => {
       clearTimeout(timer);
       clearInterval(countdownTimer);
-      clearInterval(countdownTimer);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
 
   const backgroundStyle = {
     background: `linear-gradient(to bottom, #000000 ${
@@ -122,13 +89,11 @@ const Hero: React.FC = () => {
     transition: "background 0.3s ease-out",
   };
 
-
   return (
     <div className="relative z-1 flex flex-col items-center pt-32">
       <div id="homepage-background"></div>
 
       <motion.div
-        className="absolute left-[40%] w-12 h-12 rounded-md"
         className="absolute left-[40%] w-12 h-12 rounded-md"
         initial={{ x: -10 }}
         animate={{ x: -150, y: ["0", "-10px", "0px"] }}
@@ -145,7 +110,6 @@ const Hero: React.FC = () => {
         />
       </motion.div>
       <motion.div
-        className="absolute right-[40%] w-12 h-12 rounded-md"
         className="absolute right-[40%] w-12 h-12 rounded-md"
         initial={{ x: 10 }}
         animate={{ x: 150, y: ["0", "-10px", "0px"] }}
@@ -167,7 +131,6 @@ const Hero: React.FC = () => {
         wrapper="h1"
         speed={50}
         className="lg:text-4xl sm:text-3xl text-purple-600 drop-shadow-lg font-arcade"
-        className="lg:text-4xl sm:text-3xl text-purple-600 drop-shadow-lg font-arcade"
         repeat={0}
       />
 
@@ -177,12 +140,10 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0 }}
           className="mt-5 flex flex-col items-center text-xl text-white justify-center">
-          className="mt-5 flex flex-col items-center text-xl text-white justify-center">
           <p className="text-xl text-gray-300 mt-4 font-medium text-center">
             Fueling innovation since 2022: Where ideas ignite and dreams take
             flight!
           </p>
-          <Link href="/" target="_blank">
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -235,7 +196,6 @@ const Hero: React.FC = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="mt-8 px-6 py-3 rounded-full bg-[#a268ff] text-white font-semibold flex items-center justify-center gap-2 shadow-lg transition-all duration-200 hover:bg-[#357ae8] sparkle-button">
               className="mt-8 px-6 py-3 rounded-full bg-[#a268ff] text-white font-semibold flex items-center justify-center gap-2 shadow-lg transition-all duration-200 hover:bg-[#357ae8] sparkle-button">
               Register Now
             </motion.button>
