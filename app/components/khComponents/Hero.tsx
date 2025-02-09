@@ -125,7 +125,6 @@ const Hero: React.FC = () => {
           quality={100}
         />
       </motion.div>
-
       <TypeAnimation
         sequence={["KRACK HACK", 1200, () => setShowSubtitle(true)]}
         wrapper="h1"
