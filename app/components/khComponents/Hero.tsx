@@ -144,55 +144,7 @@ const Hero: React.FC = () => {
             Fueling innovation since 2022: Where ideas ignite and dreams take
             flight!
           </p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-xl  bg-clip-text text-purple-600 font-arcade md:text-3xl">
-            {eventStart} - {eventEnd}
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-            className="text-2xl  mt-2 bg-clip-text  text-purple-600 font-arcade md:text-4xl">
-            {eventYear}
-          </motion.div>
-
-          <div className="mt-8 grid grid-cols-4 gap-6 w-full max-w-2xl px-4">
-            <div className="text-center transform hover:scale-105 transition-transform duration-200">
-              <div className="bg-[#DB4437] rounded-lg p-4 shadow-lg">
-                <div className="text-xl font-bold text-white md:text-3xl">
-                  {timeLeft.days}
-                </div>
-              </div>
-            </div>
-            <div className="text-center transform hover:scale-105 transition-transform duration-200">
-              <div className="bg-[#0F9D58] rounded-lg p-4 shadow-lg">
-                <div className="text-xl font-bold text-white md:text-3xl">
-                  {timeLeft.hours}
-                </div>
-              </div>
-            </div>
-            <div className="text-center transform hover:scale-105 transition-transform duration-200">
-              <div className="bg-[#4285F4] rounded-lg p-4 shadow-lg">
-                <div className="text-xl font-bold text-white md:text-3xl">
-                  {timeLeft.minutes}
-                </div>
-              </div>
-            </div>
-            <div className="text-center transform hover:scale-105 transition-transform duration-200">
-              <div className="bg-[#F4B400] rounded-lg p-4 shadow-lg">
-                <div className="text-xl font-bold text-white md:text-3xl">
-                  {timeLeft.seconds}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <Link href="https://krackhack-2.devfolio.co/" target="_blank">
+          <Link href="/" target="_blank">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
