@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
                   className="md:hidden max-w-[85px] translate-y-[2px]"
                   quality={100}
                 />
-                <span className="bg-white text-lg font-semibold text-black dark:rounded-full border border-gray-500 px-3 py-1 bg-gray-800 ">
+                <span className="bg-white text-lg font-semibold text-black dark: rounded-full border border-gray-500 px-3 py-1 bg-gray-800 ">
                   IIT Mandi
                 </span>
               </Link>
