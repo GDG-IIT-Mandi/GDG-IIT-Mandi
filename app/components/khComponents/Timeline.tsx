@@ -1,6 +1,6 @@
 import React from "react";
 import { Calendar, Users, Rocket, Code, Trophy } from "lucide-react";
-
+//@ts-expect-error
 const TimelineItem = ({ icon: Icon, title, date, description, isLast }) => (
   <div className="flex-1 relative">
     {/* Connector line */}

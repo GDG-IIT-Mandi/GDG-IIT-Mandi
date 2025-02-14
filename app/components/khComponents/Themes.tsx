@@ -42,7 +42,7 @@ const themes = [
       "Create a platform that rewards users for reducing carbon emissions in daily activities.",
   },
 ];
-
+//@ts-expect-error
 const ThemeCard = ({ title, problem, isLocked, active }) => (
   <motion.div
     className={`relative border rounded-lg p-6 text-center overflow-hidden w-[320px] md:w-[450px] lg:w-[500px] ${
