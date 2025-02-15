@@ -86,7 +86,9 @@ const Themes = () => {
 
   return (
     <div className="py-10 flex flex-col items-center w-full">
-      <h2 className="text-3xl font-bold mb-6 text-center">Hackathon Themes</h2>
+      <h2 className="text-3xl font-arcade mb-6 text-center">
+        Hackathon Themes
+      </h2>
 
       <div className="relative flex items-center justify-center overflow-hidden w-full max-w-4xl">
         <div className="flex w-full justify-center">

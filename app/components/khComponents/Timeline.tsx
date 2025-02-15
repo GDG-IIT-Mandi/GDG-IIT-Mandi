@@ -117,7 +117,7 @@ const Timeline: React.FC = () => {
 
   return (
     <div className="w-full p-6 lg:p-10 bg-black" ref={containerRef}>
-      <h2 className="text-center text-2xl lg:text-3xl font-bold mb-10 text-white">
+      <h2 className="text-center text-2xl lg:text-3xl font-arcade mb-10 text-white">
         Timeline
       </h2>
       <div className="relative flex overflow-hidden">
