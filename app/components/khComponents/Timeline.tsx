@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Calendar, Users, Rocket, Code, Trophy } from "lucide-react";
 
+//@ts-expect-error
 const TimelineItem = ({ icon: Icon, title, date, description }) => (
   <div className="relative flex flex-col items-center text-center min-w-[180px] md:min-w-[220px]">
     <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-blue-500 flex items-center justify-center shadow-md">
