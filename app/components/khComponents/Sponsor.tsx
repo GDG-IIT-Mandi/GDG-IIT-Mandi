@@ -9,7 +9,7 @@ const Sponsor = () => {
     { src: "/khMedia/sntc.webp", link: "https://sntc.iitmandi.co.in/" },
     { src: "/khMedia/catalyst.webp", link: "https://www.iitmandicatalyst.in/" },
     { src: "/khMedia/coding.webp", link: "https://www.codingninjas.com/" },
-    { src: "/khMedia/appWrite.webp", link: "https://appwrite.io/" },
+    { src: "/khMedia/appwrite.webp", link: "https://appwrite.io/" },
     { src: "/khMedia/xyz.webp", link: "https://www.xyz.xyz/" },
     { src: "/khMedia/interview.webp", link: "https://interviewbuddy.net/" },
     { src: "/khMedia/sharp.webp", link: "https://sharpplatform.com/" },
@@ -40,7 +40,7 @@ const Sponsor = () => {
               <img
                 src={sponsor.src}
                 alt={`Sponsor ${index + 1}`}
-                className="w-32 h-32 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                className="w-32 h-32 object-contain filter transition-all duration-300"
               />
             </a>
           ))}
