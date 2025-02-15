@@ -1,26 +1,18 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 import { Calendar, Users, Rocket, Code, Trophy } from "lucide-react";
-//@ts-expect-error
-const TimelineItem = ({ icon: Icon, title, date, description, isLast }) => (
-  <div className="flex-1 relative">
-    {/* Connector line */}
-    {!isLast && (
-      <div className="absolute w-full h-0.5 bg-blue-200 top-8 left-1/2 z-0" />
-    )}
 
-    {/* Content */}
-    <div className="relative z-10 flex flex-col items-center gap-2">
-      {/* Icon circle */}
-      <div className="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center shadow-lg">
-        <Icon className="w-8 h-8 text-white" />
-      </div>
-
-      {/* Text content */}
-      <div className="text-center mt-2">
-        <h3 className="font-semibold text-lg text-red-500">{title}</h3>
-        <p className="text-sm font-medium text-blue-600 mb-1">{date}</p>
-        <p className="text-sm text-green-600 max-w-[200px]">{description}</p>
-      </div>
+const TimelineItem = ({ icon: Icon, title, date, description }) => (
+  <div className="relative flex flex-col items-center text-center min-w-[180px] md:min-w-[220px]">
+    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-blue-500 flex items-center justify-center shadow-md">
+      <Icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
+    </div>
+    <div className="mt-3">
+      <h3 className="font-semibold text-lg text-white">{title}</h3>
+      <p className="text-lg font-medium text-gray-300">{date}</p>
+      <p className="text-lg text-gray-400 mt-1 max-w-[180px] md:max-w-[200px]">
+        {description}
+      </p>
     </div>
   </div>
 );
@@ -29,47 +21,87 @@ const Timeline = () => {
   const stages = [
     {
       icon: Calendar,
-      title: "Registration Opens",
-      date: "March 1",
-      description:
-        "Submit your application and form your team of up to 4 members",
+      title: "Pre-Hackathon",
+      date: "7th Feb 2025",
+      description: "Pre-Hackathon Session",
     },
     {
       icon: Users,
-      title: "Team Formation",
-      date: "March 15",
-      description: "Network with other participants and finalize your team",
+      title: "Opening Ceremony",
+      date: "21st Feb 2025",
+      description: "Opening Ceremony (12 AM)",
     },
     {
-      icon: Users,
-      title: "Kickoff Event",
-      date: "March 20",
-      description: "Join us for project briefing and technical workshops",
+      icon: Code,
+      title: "Mid-Submission",
+      date: "22nd Feb 2025",
+      description: "Mid-Submission Deadline (Noon)",
     },
     {
       icon: Rocket,
-      title: "Project Submission",
-      date: "March 22",
-      description: "Submit your project for evaluation",
+      title: "Final Submission",
+      date: "23rd Feb 2025",
+      description: "Final Submission (12 AM)",
     },
     {
       icon: Trophy,
-      title: "Demo Day",
-      date: "March 23",
-      description: "Present your solution and awards ceremony",
+      title: "Closing Ceremony",
+      date: "3rd March 2025",
+      description: "Closing Ceremony",
     },
   ];
 
+  const containerRef = useRef(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (containerRef.current) {
+        const container = containerRef.current;
+        const rect = container.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const elementHeight = container.offsetHeight;
+
+        const distanceFromTop = rect.top;
+
+        const progress =
+          ((windowHeight - distanceFromTop) * 1.3) /
+          (windowHeight + elementHeight);
+
+        const clampedProgress = Math.min(1, Math.max(0, progress));
+
+        setScrollProgress(clampedProgress);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="w-full rounded-lg shadow-lg p-8">
-      <div className="flex flex-col gap-8">
-        <div className="flex gap-4 overflow-x-auto pb-4">
+    <div className="w-full p-6 lg:p-10 bg-black" ref={containerRef}>
+      <h2 className="text-center text-2xl lg:text-3xl font-bold mb-10 text-white">
+        Timeline
+      </h2>
+      <div className="relative flex overflow-hidden">
+        <div className="flex flex-col lg:flex-row gap-9 lg:gap-3 px-4 min-w-full lg:min-w-0 lg:mx-auto">
+          <div
+            className=" lg:top-8 lg:left-0 lg:w-full lg:h-1 top-0 left-6 h-full w-1 hidden absolute lg:block"
+            style={{
+              background: `linear-gradient(${
+                window.innerWidth >= 768 ? "to right" : "to bottom"
+              }, rgb(147, 51, 234) ${scrollProgress * 100}%, rgb(55, 65, 81) ${
+                scrollProgress * 100
+              }%)`,
+            }}
+          />
+
           {stages.map((stage, index) => (
-            <TimelineItem
-              key={stage.title}
-              {...stage}
-              isLast={index === stages.length - 1}
-            />
+            <div key={index} className="relative flex-1">
+              <TimelineItem {...stage} />
+            </div>
           ))}
         </div>
       </div>

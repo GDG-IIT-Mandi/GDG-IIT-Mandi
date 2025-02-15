@@ -9,6 +9,16 @@ const Sponsor = () => {
     { src: "/khMedia/sntc.webp", link: "https://sntc.iitmandi.co.in/" },
     { src: "/khMedia/catalyst.webp", link: "https://www.iitmandicatalyst.in/" },
     { src: "/khMedia/coding.webp", link: "https://www.codingninjas.com/" },
+    { src: "/khMedia/appWrite.webp", link: "https://appwrite.io/" },
+    { src: "/khMedia/xyz.webp", link: "https://www.xyz.xyz/" },
+    { src: "/khMedia/interview.webp", link: "https://interviewbuddy.net/" },
+    { src: "/khMedia/sharp.webp", link: "https://sharpplatform.com/" },
+    {
+      src: "/khMedia/givemycertificate.webp",
+      link: "https://givemycertificate.com/",
+    },
+    { src: "/khMedia/devdock.webp", link: "https://devdock.ai/" },
+    { src: "/khMedia/appwrite.webp", link: "https://appwrite.io/" },
   ];
 
   return (

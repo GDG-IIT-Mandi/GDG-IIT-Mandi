@@ -94,7 +94,7 @@ const Hero: React.FC = () => {
       <div id="homepage-background"></div>
 
       <motion.div
-        className="absolute left-[40%] w-12 h-12 rounded-md"
+        className="absolute left-[40%] w-10 h-10 rounded-md"
         initial={{ x: -10 }}
         animate={{ x: -150, y: ["0", "-10px", "0px"] }}
         transition={{
@@ -110,7 +110,7 @@ const Hero: React.FC = () => {
         />
       </motion.div>
       <motion.div
-        className="absolute right-[40%] w-12 h-12 rounded-md"
+        className="absolute right-[40%] w-10 h-10 rounded-md"
         initial={{ x: 10 }}
         animate={{ x: 150, y: ["0", "-10px", "0px"] }}
         transition={{
@@ -130,7 +130,7 @@ const Hero: React.FC = () => {
         sequence={["KRACK HACK", 1200, () => setShowSubtitle(true)]}
         wrapper="h1"
         speed={50}
-        className="lg:text-4xl sm:text-3xl text-purple-600 drop-shadow-lg font-arcade"
+        className="md:text-4xl text-2xl  text-purple-600 drop-shadow-lg font-arcade"
         repeat={0}
       />
 
@@ -166,6 +166,7 @@ const Hero: React.FC = () => {
               <div className="bg-[#DB4437] rounded-lg p-4 shadow-lg">
                 <div className="text-xl font-bold text-white md:text-3xl">
                   {timeLeft.days}
+                  <p className="text-[7px] lg:text-[10px]">Days</p>
                 </div>
               </div>
             </div>
@@ -173,6 +174,7 @@ const Hero: React.FC = () => {
               <div className="bg-[#0F9D58] rounded-lg p-4 shadow-lg">
                 <div className="text-xl font-bold text-white md:text-3xl">
                   {timeLeft.hours}
+                  <p className="text-[7px] lg:text-[10px]">Hours</p>
                 </div>
               </div>
             </div>
@@ -180,6 +182,7 @@ const Hero: React.FC = () => {
               <div className="bg-[#4285F4] rounded-lg p-4 shadow-lg">
                 <div className="text-xl font-bold text-white md:text-3xl">
                   {timeLeft.minutes}
+                  <p className="text-[7px] lg:text-[10px]">Minutes</p>
                 </div>
               </div>
             </div>
@@ -187,6 +190,7 @@ const Hero: React.FC = () => {
               <div className="bg-[#F4B400] rounded-lg p-4 shadow-lg">
                 <div className="text-xl font-bold text-white md:text-3xl">
                   {timeLeft.seconds}
+                  <p className="text-[6.5px] lg:text-[10px]">Seconds</p>
                 </div>
               </div>
             </div>

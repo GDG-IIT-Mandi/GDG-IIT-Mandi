@@ -1,7 +1,14 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  X,
+  LinkIcon,
+} from "lucide-react";
 
 const SocialBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,10 +23,22 @@ const SocialBar = () => {
   }, []);
 
   const socialIcons = [
-    { Icon: Facebook, color: "text-blue-500", href: "#" },
-    { Icon: Twitter, color: "text-blue-400", href: "#" },
-    { Icon: Instagram, color: "text-pink-500", href: "#" },
-    { Icon: Linkedin, color: "text-blue-700", href: "#" },
+    {
+      Icon: LinkIcon,
+      color: "text-blue-500",
+      href: "https://linktr.ee/gdg_iitmandi",
+    },
+    { Icon: X, color: "text-blue-400", href: "https://x.com/gdg_iitmandi" },
+    {
+      Icon: Instagram,
+      color: "text-pink-500",
+      href: "https://www.instagram.com/gdg_iitmandi/",
+    },
+    {
+      Icon: Linkedin,
+      color: "text-blue-700",
+      href: "https://www.linkedin.com/company/google-developer-groups-iit-mandi/posts/?feedView=all",
+    },
   ];
 
   return (
@@ -32,6 +51,7 @@ const SocialBar = () => {
           <a
             key={index}
             href={href}
+            target="_blank"
             className={`${color} hover:scale-110 transition-transform duration-200`}>
             <Icon className="w-6 h-6 cursor-pointer" />
           </a>

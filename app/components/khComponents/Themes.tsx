@@ -6,42 +6,55 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const themes = [
   {
-    title: "AI & Machine Learning",
-    isLocked: false,
-    problem:
-      "Develop an AI-based assistant that helps visually impaired individuals navigate public spaces.",
-  },
-  {
-    title: "Blockchain & Crypto",
+    title: "Generative AI",
     isLocked: true,
     problem:
-      "Create a decentralized voting system using blockchain to ensure transparent elections.",
+      "Explore how generative AI models like GPT can be used for creative content generation, automated storytelling, and personalized learning.",
   },
   {
-    title: "IoT & Smart Cities",
-    isLocked: false,
-    problem:
-      "Design an IoT-enabled waste management system that optimizes garbage collection.",
-  },
-  {
-    title: "Health Tech",
+    title: "Machine Learning",
     isLocked: true,
     problem:
-      "Develop an AI-powered early disease detection system using patient health records.",
+      "Develop predictive models that analyze large datasets to uncover patterns, trends, and insights in various domains such as healthcare and finance.",
   },
   {
-    title: "Fintech",
+    title: "Deep Learning",
     isLocked: true,
     problem:
-      "Build an AI-based personal finance assistant to help users manage expenses.",
+      "Build advanced neural networks that enhance image recognition, natural language processing, and autonomous decision-making systems.",
   },
   {
-    title: "Sustainability",
+    title: "Blockchain",
     isLocked: true,
     problem:
-      "Create a platform that rewards users for reducing carbon emissions in daily activities.",
+      "Create secure and decentralized applications leveraging blockchain technology for industries like finance, supply chain, and digital identity verification.",
+  },
+  {
+    title: "Cybersecurity",
+    isLocked: true,
+    problem:
+      "Design AI-powered cybersecurity solutions to detect threats, prevent cyber attacks, and secure digital infrastructure.",
+  },
+  {
+    title: "Web Development",
+    isLocked: true,
+    problem:
+      "Develop modern web applications with seamless user experiences using the latest frameworks and technologies like Next.js and React.",
+  },
+  {
+    title: "App Development",
+    isLocked: true,
+    problem:
+      "Build innovative mobile applications for iOS and Android that leverage AI, IoT, and cloud computing for enhanced user engagement.",
+  },
+  {
+    title: "Surprise",
+    isLocked: true,
+    problem:
+      "A mystery challenge awaits! Unveil a unique problem statement that pushes boundaries in technology and innovation.",
   },
 ];
+
 //@ts-expect-error
 const ThemeCard = ({ title, problem, isLocked, active }) => (
   <motion.div
@@ -51,8 +64,8 @@ const ThemeCard = ({ title, problem, isLocked, active }) => (
     initial={{ opacity: 0.5, scale: 0.9 }}
     animate={{ opacity: active ? 1 : 0.5, scale: active ? 1 : 0.9 }}
     transition={{ duration: 0.6 }}>
-    <h3 className="text-2xl font-bold">{title}</h3>
-    <p className="text-lg text-gray-600 mt-2">{problem}</p>
+    <h3 className="text-2xl text-gray-50 font-bold">{title}</h3>
+    <p className="text-lg text-gray-300 mt-2">{problem}</p>
     {isLocked && (
       <div className="absolute inset-0 bg-black/70 flex items-center justify-center">
         <Lock className="w-10 h-10 text-white" />
@@ -67,7 +80,7 @@ const Themes = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % themes.length);
-    }, 4000); // Auto-scroll every 4 seconds
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
