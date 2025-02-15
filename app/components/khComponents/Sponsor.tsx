@@ -55,7 +55,7 @@ const Sponsor = () => {
               <img
                 src={sponsor.src}
                 alt={`Sponsor ${index + 1}`}
-                className="w-32 h-32 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                className="w-32 h-32 object-contain filter  transition-all duration-300"
               />
             </a>
           ))}
