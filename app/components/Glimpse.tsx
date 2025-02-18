@@ -50,7 +50,7 @@ const Glimpse = () => {
   const goToSlide = (index: number) => setCurrentSlide(index);
 
   return (
-    <div className="relative w-3/4 mx-auto h-96 overflow-hidden rounded-lg shadow-lg bg-gradient-to-br from-gray-900 to-black">
+    <div className="relative w-full mx-auto h-96 overflow-hidden rounded-lg shadow-lg bg-gradient-to-br from-gray-900 to-black">
       {/* Slides */}
       <div
         className="flex transition-transform duration-700 ease-in-out h-full"
