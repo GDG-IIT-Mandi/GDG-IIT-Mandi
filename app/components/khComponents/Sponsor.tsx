@@ -14,6 +14,7 @@ interface SponsorSectionProps {
 const Sponsor = () => {
   const sponsorTiers = {
     platinum: [
+      { src: "/khMedia/agent.webp", link: "https://agent.ai/" },
       { src: "/khMedia/sharp.webp", link: "https://sharpplatform.com/" },
       {
         src: "/khMedia/csharp.webp",
