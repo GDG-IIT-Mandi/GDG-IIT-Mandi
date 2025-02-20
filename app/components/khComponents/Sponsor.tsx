@@ -1,4 +1,5 @@
 import React from "react";
+
 interface Sponsor {
   src: string;
   link: string;
@@ -11,6 +12,7 @@ interface SponsorSectionProps {
   sponsors: Sponsor[];
   size: SponsorSize;
 }
+
 const Sponsor = () => {
   const sponsorTiers = {
     platinum: [
@@ -97,25 +99,29 @@ const Sponsor = () => {
           size="large"
         />
 
-        {/* Gold and Silver section - side by side */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <SponsorSection
-            title="Gold"
-            sponsors={sponsorTiers.gold}
-            size="large"
-          />
-          <SponsorSection
-            title="Silver"
-            sponsors={sponsorTiers.silver}
-            size="large"
-          />
+        {/* Gold and Silver section - adjusted grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+          <div className="md:col-span-4">
+            <SponsorSection
+              title="Gold"
+              sponsors={sponsorTiers.gold}
+              size="large"
+            />
+          </div>
+          <div className="md:col-span-8">
+            <SponsorSection
+              title="Silver"
+              sponsors={sponsorTiers.silver}
+              size="large"
+            />
+          </div>
         </div>
 
         {/* Past section - full width */}
         <SponsorSection
           title="Past"
           sponsors={sponsorTiers.past}
-          size="small"
+          size="large"
         />
       </div>
     </div>
@@ -123,7 +129,6 @@ const Sponsor = () => {
 };
 
 export default Sponsor;
-
 // const Sponsor = () => {
 // const sponsors = [
 //   { src: "/khMedia/celo.webp", link: "https://celo.org/" },
