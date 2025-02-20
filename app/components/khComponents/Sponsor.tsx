@@ -33,6 +33,7 @@ const Sponsor = () => {
       },
       { src: "/khMedia/appwrite.webp", link: "https://appwrite.io/" },
       { src: "/khMedia/interview.webp", link: "https://interviewbuddy.net/" },
+      { src: "/khMedia/code.webp", link: "https://codecrafters.io/" },
     ],
     past: [
       { src: "/khMedia/gd.webp", link: "https://developers.google.com/" },
