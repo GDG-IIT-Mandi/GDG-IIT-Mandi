@@ -164,14 +164,14 @@ const GDGTeam: React.FC = () => {
         prevItems.map((item) =>
           item.id === id
             ? {
-                ...item,
-                Name: editName,
-                Designation: editDesignation,
-                SubTeam: editSubTeam,
-                Image: imageUrl,
-                Linkedin: editLinkedin,
-                Instagram: editInstagram,
-              }
+              ...item,
+              Name: editName,
+              Designation: editDesignation,
+              SubTeam: editSubTeam,
+              Image: imageUrl,
+              Linkedin: editLinkedin,
+              Instagram: editInstagram,
+            }
             : item
         )
       );
@@ -236,12 +236,18 @@ const GDGTeam: React.FC = () => {
   const groupedMembers = (tempGroupedMembers: Record<string, Member[]>) => {
     const subTeamPriorities: { [key: string]: number } = {
       "Club Coordinator": 1,
-      "Co-coordinator": 3,
-      "Technical Team": 4,
-      "Management Team": 5,
-      "Design Team": 6,
-      "Publicity Team": 7,
-      "Mentorship Team": 8,
+      "AI/ML": 3,
+      "GenAI": 4,
+      "WebDev": 5,
+      "OpenSource": 6,
+      "AppDev": 7,
+      "DevOps": 8,
+      "Non-Tech": 9,
+    };
+
+    const designationPriorities: { [key: string]: number } = {
+      "Domain Lead": 1,
+      "Core Member": 2,
     };
 
     const sortedGroupedMembers = Object.entries(tempGroupedMembers)
@@ -251,7 +257,11 @@ const GDGTeam: React.FC = () => {
         return priorityA - priorityB;
       })
       .reduce((acc: Record<string, Member[]>, [subTeam, members]) => {
-        acc[subTeam] = members;
+        acc[subTeam] = members.sort((a, b) => {
+          const priorityA = designationPriorities[a.Designation.trim()] || Number.MAX_VALUE;
+          const priorityB = designationPriorities[b.Designation.trim()] || Number.MAX_VALUE;
+          return priorityA - priorityB;
+        });
         return acc;
       }, {});
 
